@@ -1,0 +1,12 @@
+mixin modal-make-order-success()
+  section.modal.modal--preload(data-modal="make-order-success")
+    .modal__wrapper
+      .modal__overlay(data-close-modal)
+      .modal__content.order
+        .title-h2.order__title
+          h2 Товар добавлен в корзину
+        button.order__submit(type="button", data-close-modal, data-focus) Ок
+
+        //- button.modal__close-btn.btn(type='button', aria-label='Закрыть попап', data-close-modal, data-focus)
+        //-   +icon("icon-close", 20, 20)
+        //-   span.visually-hidden Закрыть

@@ -1,0 +1,40 @@
+.page-title {
+  background-color: $color-white-smoke;
+  padding-top: 71px;
+  padding-bottom: 76px;
+
+  @include vp-768 {
+    position: relative;
+    padding-top: 34px;
+    padding-bottom: 91px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      height: 24px;
+      width: 100%;
+      bottom: 0;
+      background-image: url("../../img/svg/bg-zigzag-fill.svg");
+      background-position: bottom;
+      background-repeat: repeat-x;
+      // background-size: cover;
+    }
+  }
+
+  @include vp-1150 {
+    padding-top: 18px;
+    padding-bottom: 61px;
+
+    &::after {
+      height: 34px;
+    }
+  }
+
+  &__text {
+    margin: auto;
+
+    @include vp-1150 {
+      padding-bottom: 60px;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+.title-h3 {
+  h3 {
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 24px;
+    margin: 0;
+
+    @include vp-768 {
+      font-size: 20px;
+      line-height: 24px;
+    }
+  }
+}

@@ -1,0 +1,39 @@
+mixin questions()
+  -
+    const questions = [
+      {
+        isActive: true,
+        title: 'Сколько дней хранится посылка в пункте выдачи?',
+        content: 'Срок хранения — 7 дней. Можно продлить срок хранения еще на 7 дней через техподдержку',
+      },
+      {
+        isActive: false,
+        title: 'Курьер приехал, но меня не было дома. Что делать?',
+        content: 'Повторный выезд курьера осуществляется на платной основе',
+      },
+      {
+        isActive: false,
+        title: 'Где можно посмотреть статус отправления?',
+        content: 'Вы можете отследить статус отправления в Личном кабинете на странице заказа или на сайте логиста',
+      },
+      {
+        isActive: false,
+        title: 'Есть ли ограничения по регионам доставки внутри страны?',
+        content: 'Доставка осуществляется в любые регионы страны',
+      },
+    ]
+
+  section.questions
+    .container
+      .questions__wrapper
+        .title-h2.questions__title
+          h2 Популярные вопросы
+        .questions__accordion.accordion(data-accordion="parent", data-single)
+          each oneQuestion in questions
+            .accordion__element(class=`${oneQuestion.isActive ? 'is-active' : ''}`, data-accordion="element")
+              button.accordion__button.questions__btn(type="button", data-accordion="button")
+                span.accordion__title= oneQuestion.title
+                +icon("icon-close", 24, 24)
+              .accordion__content(data-accordion="content")
+                .accordion__wrapper
+                  p= oneQuestion.content

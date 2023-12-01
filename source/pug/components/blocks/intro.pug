@@ -1,10 +1,40 @@
 mixin intro()
-  .intro
+  -
+    const toys = [
+      {
+        name: 'interior',
+        href: 'interior-items.html',
+        text: 'Предметы <br /> интерьера',
+        iconWidth: 40,
+        iconHeight: 62,
+      },
+      {
+        name: 'toy',
+        href: 'kids-toys.html',
+        text: 'Детские <br /> игрушки',
+        iconWidth: 60,
+        iconHeight: 60,
+      },
+    ]
+
+  section.intro.intro--margin.intro--decor
+    .container
+      .intro__wrapper
+        .title-h1.intro__title
+          h1 Милые штуки ручной <br> работы для дома
+        ul.intro__list
+          each oneToy in toys
+            li.intro__item
+              a.intro__link(class=`intro__link--${oneToy.name}`, href=oneToy.href)
+                span.intro__link-text !{oneToy.text}
+                +icon(`icon-intro-${oneToy.name}`, oneToy.iconWidth, oneToy.iconHeight)
+
+  //- .intro
     //- вставлять блоки во внешний контейнер неверно
     //- все блоки содержат в себе container без доп класса tutorial__wrapper
     .container
-      p(style="margin-top: 40px;") Текст&nbsp;с&nbsp;мнемониками
+      //- p(style="margin-top: 40px;") Текст&nbsp;с&nbsp;мнемониками
 
-      p(style="margin-top: 40px;") Пример использования +img()
-      p(style="margin-bottom: 40px;")
-        +img("content", "placeholder", "png", 120, 120, "Пример")
+      //- p(style="margin-top: 40px;") Пример использования +img()
+      //- p(style="margin-bottom: 40px;")
+      //-   +img("content", "placeholder", "png", 120, 120, "Пример")

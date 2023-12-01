@@ -1,3 +1,45 @@
 mixin footer(footerMods)
+  -
+    const socials = [
+      {
+        iconName: "insta",
+        iconWidth: 22,
+        iconHeight: 21,
+        url: "https://www.instagram.com/mimimishkashop",
+        text: "Мы в Instagram",
+      },
+      {
+        iconName: "fb",
+        iconWidth: 15,
+        iconHeight: 28,
+        url: "https://www.facebook.com/mimimishkashop",
+        text: "Мы в Facebook",
+      },
+      {
+        iconName: "twitter",
+        iconWidth: 23,
+        iconHeight: 20,
+        url: "https://twitter.com/mimimishkashop",
+        text: "Мы в Twitter",
+      },
+    ]
+
   footer.footer(class=footerMods)
     .container
+      .footer__wrapper
+        if(currentUrl === 'index.html')
+          span.footer__logo
+            +icon("icon-logo-footer", 102, 34)
+        else
+          a.footer__logo(href="index.html", aria-label="Переход на главную")
+            +icon("icon-logo-footer", 102, 34)
+        .footer__social.social
+          ul.social__list
+            each oneSocial in socials
+              li.social__item
+                a.social__link(class=`social__link--${oneSocial.iconName}`, href=oneSocial.url, target="_blank", aria-label= oneSocial.text)
+                  +icon(`icon-${oneSocial.iconName}`, oneSocial.iconWidth, oneSocial.iconHeight)
+        .footer__copyright.copyright
+          a.copyright__link(href="https://htmlacademy.ru/intensive/adaptive", target="_blank", aria-label="HTML Academy")
+            p.copyright__text Разработано
+            +icon("icon-htmlacademy", 27, 34)

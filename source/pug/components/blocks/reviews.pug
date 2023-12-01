@@ -1,0 +1,39 @@
+mixin reviews()
+  -
+    const reviews = [
+      {
+        text: 'Я\xA0молодая мама, но\xA0всё равно фотографии не\xA0набирали и\xA0близко такого количества лайков, как\xA0у популярных инстамамочек.\xA0В отчаянии, я\xA0накупила аксессуаров и\xA0игрушек в\xA0Мишке, и\xA0мои фотографии сразу стали более стильными, а\xA0также набирают больше лайков!',
+        authorName: 'Анастасия Красильникова' ,
+        nickname: '@misssssiskras',
+      },
+      {
+        text: 'Я\xA0молодая мама, но\xA0всё равно фотографии не\xA0набирали и\xA0близко такого количества лайков, как\xA0у популярных инстамамочек.\xA0В отчаянии, я\xA0накупила аксессуаров и\xA0игрушек в\xA0Мишке, и\xA0мои фотографии сразу стали более стильными, а\xA0также набирают больше лайков!',
+        authorName: 'Анастасия Красильникова' ,
+        nickname: '@misssssiskras',
+      },
+      {
+        text: 'Я\xA0молодая мама, но\xA0всё равно фотографии не\xA0набирали и\xA0близко такого количества лайков, как\xA0у популярных инстамамочек.\xA0В отчаянии, я\xA0накупила аксессуаров и\xA0игрушек в\xA0Мишке, и\xA0мои фотографии сразу стали более стильными, а\xA0также набирают больше лайков!',
+        authorName: 'Анастасия Красильникова' ,
+        nickname: '@misssssiskras',
+      },
+    ]
+
+  section.reviews.reviews--decor
+    .reviews__bg
+      .container
+        .reviews__wrapper
+          .title-h2.reviews__title
+            h2 Отзывы
+          .reviews__list.swiper(data-reviews-slider)
+            .reviews__list-wrapper.swiper-wrapper
+              each oneReview in reviews
+                blockquote.reviews__item.swiper-slide
+                  p.reviews__text= oneReview.text
+                  cite.reviews__author-name= oneReview.authorName
+                    span.reviews__author-nickname= oneReview.nickname
+          .reviews__btn-block
+            button.reviews__btn.reviews__btn--prev(type="button", data-reviews-slider-prev-btn, aria-label="Предыдущий отзыв")
+              +icon("icon-arrow", 50, 26)
+            button.reviews__btn.reviews__btn--next(type="button", data-reviews-slider-next-btn, aria-label="Следующий отзыв")
+              +icon("icon-arrow", 50, 26)
+          +btn({text: "Написать", href: "write-review.html"}).reviews__write(data-open-modal="feedback")

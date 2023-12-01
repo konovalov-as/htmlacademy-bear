@@ -1,0 +1,9 @@
+mixin server-error()
+  .server-error
+    .container
+      .server-error__wrapper
+        p Мы уже устраняем неисправность, попробуйте обновить страницу через некоторое время
+        p Приносим извинения за временные неудобства
+        .server-error__action
+          +btn({text: "Обновить страницу", onclick: 'location.reload()' })
+          +btn({text: "На главную", href: 'index.html', onclick: 'location.reload()'})

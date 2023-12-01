@@ -1,0 +1,84 @@
+.order {
+  &__title {
+    h2 {
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 12px;
+
+      @include vp-768 {
+        font-size: 30px;
+        line-height: 57px;
+      }
+    }
+  }
+
+  &__form {
+    p {
+      font-size: 15px;
+      line-height: 30px;
+      color: $color-charcoal;
+      text-align: center;
+      margin: 0;
+      margin-bottom: 24px;
+
+      @include vp-768 {
+        font-size: 17px;
+        margin-bottom: 22px;
+      }
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      margin-bottom: 31px;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    li {
+      margin-right: 7px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__submit {
+    display: block;
+    border-color: $color-downy;
+    border: 2px solid transparent;
+    color: $color-default-white;
+    background-color: $color-downy;
+    font-size: 17px;
+    line-height: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    max-width: 260px;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 15px;
+    padding-right: 15px;
+    cursor: pointer;
+    transition: color $trans-default, background-color $trans-default, border-color $trans-default;
+
+    &:hover,
+    &:focus {
+      color: $color-downy;
+      border-color: $color-downy;
+      background-color: $color-default-white;
+    }
+
+    &:active {
+      color: rgba($color-downy, 0.5);
+      border-color: rgba($color-downy, 0.5);
+    }
+
+    @include vp-768 {
+      max-width: 350px;
+    }
+  }
+}

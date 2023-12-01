@@ -1,0 +1,19 @@
+mixin search()
+  section.search
+    .container
+      .search__wrapper
+        h2.visually-hidden Поиск товаров
+        .search__form(data-form-validate, data-callback="search")
+          form(method="post", action="https://echo.htmlacademy.ru/")
+            .search__query
+              +custom-input({
+                inputName: "search-goods",
+                inputId: "search-goods",
+                inputPlaceholder: "Поиск по каталогу"
+              }).custom-input--search(data-validate-type="text", data-limitation="letters-and-digit", data-required)
+              .search__action
+                button.search__btn(type="reset", aria-label="Очистить поле ввода")
+                  +icon("icon-close", 20, 20)
+                button.search__btn(type="submit", aria-label="Найти")
+                  +icon("icon-search", 20, 20)
+                  span.search__text-btn Найти

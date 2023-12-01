@@ -1,0 +1,132 @@
+.cart {
+  &__wrapper {
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    @include vp-768 {
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+
+    @include vp-1150 {
+      margin-top: 60px;
+      margin-bottom: 60px;
+    }
+  }
+
+  &__empty {
+    img {
+      width: 126px;
+      height: 100px;
+    }
+
+    svg {
+      width: 126px;
+      height: 100px;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
+  &__title {
+    h2 {
+      font-weight: 400;
+      font-size: 17px;
+      line-height: 24px;
+      text-align: center;
+      margin-bottom: 20px;
+
+      @include vp-768 {
+        font-size: 20px;
+        line-height: 24px;
+      }
+
+      &--data {
+        text-align: left;
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  &__start-btn {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  &__no-empty {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  &__list {
+    margin-bottom: 20px;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    display: flex;
+    column-gap: 10px;
+    border: 1px solid $color-gainsboro;
+    border-radius: 0.7rem;
+    margin-bottom: 20px;
+    padding: 10px;
+  }
+
+  &__item-left {
+    flex-basis: 30%;
+  }
+
+  &__item-right {
+    flex-basis: 70%;
+  }
+
+  &__picture {
+    background-color: $color-white-smoke;
+    border-radius: 0.5rem;
+
+    @include padding-hack-img(92, 92);
+  }
+
+  &__product-name {
+    p {
+      font-size: 17px;
+      line-height: 24px;
+      margin: 0;
+      margin-bottom: 10px;
+
+      @include vp-768 {
+        font-size: 19px;
+        line-height: 26px;
+      }
+    }
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__price {
+    p {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 33px;
+      color: $color-charcoal;
+      margin: 0;
+    }
+  }
+
+  &__remove-btn {
+    width: 18px;
+    height: 18px;
+    padding: 2px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  &__go-btn {
+    margin-left: auto;
+  }
+}

@@ -5,15 +5,47 @@
 
 $color-default-black:               #000000;
 $color-default-white:               #ffffff;
+$color-default-red:                 #ff0000;
 $color-transparent:                 rgba(255, 255, 255, 0);
-$color-accent-main: #2c39f2;
-$color-accent-second: #212121;
+$color-accent-main:                 #2c39f2;
+$color-accent-second:               #212121;
 
 // Project palette
 // для нейминга цветов используем https://www.htmlcsscolor.com/hex/334482
 
 $color-neon-blue:                   #2c39f2;
+$color-neon-blue-2:                 #1937ff;
 $color-torch-red:                   #ff1553;
+
+
+$color-downy:                       #63d1bb;
+$color-downy-2:                     #71d6c1;
+$color-downy-3:                     #59d5bc;
+$color-downy-4:                     #62d1ba;
+$color-puerto-rico:                 #46c1ae;
+$color-puerto-rico-2:               #56c3b2;
+$color-dark-cyan:                   #149080;
+$color-charcoal:                    #444444;
+$color-whisper:                     #ececec;
+$color-whisper-2:                   #ededed;
+$color-whisper-3:                   #e8e8e8;
+$color-whisper-4:                   #e6e6e6;
+$color-whisper-5:                   #e7e7e7;
+$color-tory-blue:                   #eeeeee;
+$color-snow:                        #f9f9f9;
+$color-island-spice:                #f4ead8;
+$color-white-smoke:                 #f1f1f1;
+$color-aubergine:                   #231f20;
+$color-quartz:                      #dfdfe1;
+$color-mischka:                     #a9afbc;
+$color-very-light-grey:             #cccccc;
+$color-light-grey:                  #d3d2d2;
+$color-summer-sky:                  #42a5f5;
+$color-gainsboro:                   #dfdfdf;
+$color-silver:                      #c6c6c6;
+$color-dark-green:                  #000101;
+$color-islamic-green:               #15ab07;
+
 
 // Gradient
 
@@ -29,7 +61,7 @@ $fz-default:                        16px;
 // https://www.artlebedev.ru/kovodstvo/sections/159/#13
 $ff-rouble:                         "Rouble", "Arial", sans-serif;
 
-$ff-placeholder:                    "Placeholder", "Arial", sans-serif;
+$ff-placeholder:                    "opensans", "Arial", sans-serif;
 
 // Animation
 // ---------------------------------
@@ -49,6 +81,7 @@ $vp-320:                            320px;
 $vp-375:                            375px;
 $vp-768:                            768px;
 $vp-1024:                           1024px;
+$vp-1150:                           1150px;
 $vp-1280:                           1280px;
 $vp-1440:                           1440px;
 $vp-1920:                           1920px;

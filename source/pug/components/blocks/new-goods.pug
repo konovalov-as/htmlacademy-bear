@@ -1,0 +1,66 @@
+mixin new-goods()
+  -
+    const newProducts = [
+      {
+        textLabel: "Новинка",
+        styleLabel: "product-card__label--new",
+        desktopWebpImg: "img/content/photo-dragon-desktop@1x.webp 1x, img/content/photo-dragon-desktop@2x.webp 2x",
+        tabletWebpImg: "img/content/photo-dragon-tablet@1x.webp 1x, img/content/photo-dragon-tablet@2x.webp 2x",
+        mobileWebpImg: "img/content/photo-dragon-mobile@1x.webp 1x, img/content/photo-dragon-mobile@2x.webp 2x",
+        desktopImg: "img/content/photo-dragon-desktop@1x.jpg 1x, img/content/photo-dragon-desktop@2x.jpg 2x",
+        tabletImg: "img/content/photo-dragon-tablet@1x.jpg 1x, img/content/photo-dragon-tablet@2x.jpg 2x",
+        mobileImg: "img/content/photo-dragon-mobile@1x.jpg",
+        mobileRetinaImg: "img/content/photo-dragon-mobile@2x.jpg 2x",
+        widthImg: 260,
+        heightImg: 195,
+        altText: "Вязанный дракончик",
+        productTitle: "Дракончик",
+        productCharacteristics: "Рост 18 см, вес 220 г",
+        productPrice: "1 900 ₽",
+      },
+      {
+        textLabel: "Новинка",
+        styleLabel: "product-card__label--new",
+        desktopWebpImg: "img/content/photo-tiger-desktop@1x.webp 1x, img/content/photo-tiger-desktop@2x.webp 2x",
+        tabletWebpImg: "img/content/photo-tiger-tablet@1x.webp 1x, img/content/photo-tiger-tablet@2x.webp 2x",
+        mobileWebpImg: "img/content/photo-tiger-mobile@1x.webp 1x, img/content/photo-tiger-mobile@2x.webp 2x",
+        desktopImg: "img/content/photo-tiger-desktop@1x.jpg 1x, img/content/photo-tiger-desktop@2x.jpg 2x",
+        tabletImg: "img/content/photo-tiger-tablet@1x.jpg 1x, img/content/photo-tiger-tablet@2x.jpg 2x",
+        mobileImg: "img/content/photo-tiger-mobile@1x.jpg",
+        mobileRetinaImg: "img/content/photo-tiger-mobile@2x.jpg 2x",
+        widthImg: 260,
+        heightImg: 195,
+        altText: "Каркасная игрушка Тигр",
+        productTitle: "Тигр",
+        productCharacteristics: "Рост 20 см, вес 300 г",
+        productPrice: "1 200 ₽",
+      },
+      {
+        textLabel: "Новинка",
+        styleLabel: "product-card__label--new",
+        desktopWebpImg: "img/content/photo-unicom-desktop@1x.webp 1x, img/content/photo-unicom-desktop@2x.webp 2x",
+        tabletWebpImg: "img/content/photo-unicom-tablet@1x.webp 1x, img/content/photo-unicom-tablet@2x.webp 2x",
+        mobileWebpImg: "img/content/photo-unicom-mobile@1x.webp 1x, img/content/photo-unicom-mobile@2x.webp 2x",
+        desktopImg: "img/content/photo-unicom-desktop@1x.jpg 1x, img/content/photo-unicom-desktop@2x.jpg 2x",
+        tabletImg: "img/content/photo-unicom-tablet@1x.jpg 1x, img/content/photo-unicom-tablet@2x.jpg 2x",
+        mobileImg: "img/content/photo-unicom-mobile@1x.jpg",
+        mobileRetinaImg: "img/content/photo-unicom-mobile@2x.jpg 2x",
+        widthImg: 260,
+        heightImg: 195,
+        altText: "Оранжевая единорожка",
+        productTitle: "Единорожка",
+        productCharacteristics: "Рост 13 см, вес 250 г",
+        productPrice: "900 ₽",
+      },
+    ]
+
+  section.goods
+    .container
+      .goods__wrapper
+        .title-h2.goods__title
+          h2 Мягкие новинки
+        ul.goods__list
+          each oneProduct in newProducts
+            +product-card({
+              oneProduct: oneProduct
+            }).goods__item

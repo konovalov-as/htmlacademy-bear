@@ -4,17 +4,34 @@ import {Form} from './modules/form-validate/form';
 import {CustomSelect} from './modules/select/custom-select';
 import {uploadFile, uploadImageDrop} from './modules/input-file/init-upload';
 
+import {initMobileMenu} from './modules/main-nav.js'; // подключение мобильного меню
+import {initMap} from './modules/map.js'; // подключение карты
+import {reviewsSlider} from './vendor.js'; // поключение слайдера отзывов
+import {initPhoneMask} from './modules/form-validate/phone-mask.js';
+import {initAccordions} from './modules/accordion/init-accordion.js';
+import {initPlayVideo} from './modules/play-video.js'; // подключение воспроизвести видео
+
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
 
   // Utils
   // ---------------------------------
-
   mobileVhFix();
 
   // Modules
   // ---------------------------------
+
+
+  // для адаптивного JS используейтся matchMedia и addListener
+  const breakpoint = window.matchMedia('(max-width:768px)');
+  const breakpointChecker = () => {
+    if (breakpoint.matches) {
+      initMobileMenu();
+    }
+  };
+  breakpoint.addListener(breakpointChecker);
+  breakpointChecker();
 
   // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'
   // в load следует добавить скрипты, не участвующие в работе первого экрана
@@ -27,7 +44,14 @@ window.addEventListener('DOMContentLoaded', () => {
     const form = new Form();
     window.form = form;
     form.init();
+
+    reviewsSlider();
+    initPhoneMask();
+    initAccordions();
+    initMap();
+    initPlayVideo();
   });
+
 });
 
 // ---------------------------------

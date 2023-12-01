@@ -1,0 +1,48 @@
+.questions {
+  &__wrapper {
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    @include vp-768 {
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+
+    @include vp-1150 {
+      margin-top: 60px;
+      margin-bottom: 60px;
+    }
+  }
+
+  &__accordion {
+    max-width: 700px;
+    margin: 0 auto 50px auto;
+  }
+
+  &__title {
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+
+      @include vp-768 {
+        margin-bottom: 30px;
+      }
+
+      @include vp-1150 {
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  &__btn {
+    img {
+      width: 24px;
+      height: 24px;
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}

@@ -1,0 +1,60 @@
+mixin cart()
+  -
+    const cartProducts = [
+      {
+        webpImg: "img/content/triple-set-preview@1x.webp 1x, img/content/triple-set-preview@2x.webp 2x",
+        img: "img/content/triple-set-preview@1x.jpg",
+        retinaImg: "img/content/triple-set-preview@2x.jpg 2x",
+        altText: "Вязаная корзинка",
+        title: "Корзинка вязанная",
+        text: "Экологически чистая пряжа, ручная работа",
+      },
+      {
+        webpImg: "img/content/brown-basket-preview@1x.webp 1x, img/content/brown-basket-preview@2x.webp 2x",
+        img: "img/content/brown-basket-preview@1x.jpg",
+        retinaImg: "img/content/brown-basket-preview@2x.jpg 2x",
+        altText: "Вязаная корзинка корричнево-кремового цвета",
+        title: "Корзинка ручной работы",
+        text: "Материал хлопок, корричнево-кремового цвета",
+      },
+    ]
+
+  section.cart
+    .container
+      .cart__wrapper
+        if !cartProducts.length
+          .cart__empty
+            +icon("icon-no-data", 126, 100)
+            .title-h2.cart__title
+              h2 В корзине пусто. Подберём что-нибудь?
+            +btn({text: "Начать покупки", href: "catalog.html"}).cart__start-btn
+        else
+          .cart__no-empty
+            .title-h2.cart__title.cart__title--data
+              h2 2 товара
+            .cart__form(data-form-validate, data-callback="base")
+              form(method="post", action="https://echo.htmlacademy.ru/")
+                ul.cart__list
+                  each oneProduct in cartProducts
+                    li.cart__item
+                      .cart__item-left
+                        .cart__picture
+                          picture
+                            source(type="image/webp", srcset="img/content/triple-set-preview@1x.webp 1x, img/content/triple-set-preview@2x.webp 2x")
+                            img(src="img/content/triple-set-preview@1x.jpg", srcset="img/content/triple-set-preview@2x.jpg 2x", alt="Вязаная корзинка", loading="lazy", width="92", height="92")
+                      .cart__item-right
+                        .cart__product-name
+                          p Вязаная корзинка
+                        .product-quantity.product-quantity--indent
+                          button.product-quantity__btn.product-quantity__btn--minus(type="button") -
+                          +custom-input({
+                            inputType: "number"
+                          }).custom-input--quantity(data-validate-type="text", data-limitation="digit", data-required)
+                          button.product-quantity__btn.product-quantity__btn--plus(type="button") +
+                        .cart__row
+                          .cart__price
+                            p 1 200 ₽
+                          button.btn.cart__remove-btn(type="button", aria-label="Удалить эту позицию")
+                            +icon("icon-close", 18, 18)
+
+                +btn({text: "Перейти к оформлению", type: "submit"}).cart__go-btn

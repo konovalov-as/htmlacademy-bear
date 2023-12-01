@@ -1,0 +1,227 @@
+.intro {
+  background-color: $color-snow;
+  background-image: url("../../img/content/hero-mobile@1x.webp");
+  background-repeat: no-repeat;
+  background-position: center -17px;
+  overflow: hidden;
+
+  @include retina {
+    background-image: url("../../img/content/hero-mobile@2x.webp");
+    background-size: 575px;
+  }
+
+  @include vp-768 {
+    background-image: url("../../img/content/hero-tablet@1x.webp");
+    background-position: center -62px;
+
+    @include retina {
+      background-image: url("../../img/content/hero-tablet@2x.webp");
+      background-size: cover;
+    }
+  }
+
+  @include vp-1150 {
+    background-position: center -77px;
+  }
+
+  &--margin {
+    margin-bottom: 27px;
+
+    @include vp-1150 {
+      margin-bottom: 33px;
+    }
+  }
+
+  &--decor {
+    @include vp-768 {
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        right: 0;
+        z-index: 10;
+        width: 100%;
+        height: 25px;
+        background-image: url("../../img/svg/bg-zigzag-fill.svg");
+        background-repeat: repeat-x;
+        background-position: bottom center;
+      }
+    }
+
+    @include vp-1150 {
+      &::after {
+        height: 34px;
+      }
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    min-height: 489px;
+    flex-direction: column;
+    padding-top: 73px;
+
+    @include vp-768 {
+      min-height: 696px;
+      padding-top: 92px;
+    }
+
+    @include vp-1150 {
+      min-height: 682px;
+      padding-top: 78px;
+    }
+  }
+
+  &__list {
+    margin: 0;
+    margin-top: auto;
+    padding: 0;
+    list-style: none;
+
+    @include vp-768 {
+      display: flex;
+    }
+  }
+
+  &__item {
+    flex-basis: 100%;
+
+    @include vp-768 {
+      display: flex;
+      flex-basis: 100%;
+    }
+  }
+
+  &__title {
+    margin-bottom: 30px;
+
+    h1 {
+      margin: 0;
+    }
+  }
+
+  &__link {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 24px;
+    color: $color-default-white;
+    text-decoration: none;
+    padding-top: 25px;
+    padding-bottom: 17px;
+    transition: color $trans-default, transform $trans-default, background-color $trans-default;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100vw;
+      z-index: -1;
+
+      @include vp-768 {
+        content: none;
+      }
+    }
+
+    & svg {
+      fill: rgba($color-dark-cyan, 0.5);
+      transition: fill $trans-default;
+      flex-shrink: 0;
+    }
+
+    &--interior {
+      &::before {
+        background-color: $color-downy;
+        transition: background-color $trans-default;
+      }
+
+      svg,
+      img {
+        width: 40px;
+        height: 62px;
+      }
+
+      &:hover,
+      &:focus {
+        &::before {
+          background-color: $color-downy-3;
+        }
+
+        @include vp-768 {
+          background-color: $color-downy-3;
+        }
+      }
+
+      @include vp-768 {
+        background-color: $color-downy;
+      }
+    }
+
+    &--toy {
+      &::before {
+        background-color: $color-puerto-rico-2;
+        transition: background-color $trans-default;
+      }
+
+      svg,
+      img {
+        width: 60px;
+        height: 60px;
+      }
+
+      &:hover,
+      &:focus {
+        &::before {
+          background-color: $color-puerto-rico;
+        }
+
+        @include vp-768 {
+          background-color: $color-puerto-rico;
+        }
+      }
+
+      @include vp-768 {
+        background-color: $color-puerto-rico-2;
+      }
+    }
+
+    @include vp-768 {
+      font-size: 20px;
+      line-height: 30px;
+      padding-top: 28px;
+      padding-bottom: 41px;
+      padding-left: 35px;
+      padding-right: 35px;
+      position: static;
+      z-index: auto;
+      transform: translateY(0);
+      flex-basis: 100%;
+    }
+
+    &:hover,
+    &:focus {
+      transform: translateY(-5px);
+    }
+
+    &:active {
+      color: rgba($color-default-white, 0.3);
+
+      & svg {
+        fill: rgba($color-dark-cyan, 0.3);
+      }
+    }
+  }
+
+  &__link-text {
+    margin-right: 25px;
+  }
+}

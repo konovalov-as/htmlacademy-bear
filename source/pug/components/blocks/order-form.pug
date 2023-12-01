@@ -1,0 +1,163 @@
+mixin order-form()
+  -
+    const typesList = [
+      {
+        name: "type",
+        value: "interior-items",
+        label: "Аксессуар для интерьера",
+        checked: true,
+        disabled: false,
+      },
+      {
+        name: "type",
+        value: "kids-toys",
+        label: "Детская игрушка",
+        checked: false,
+        disabled: false,
+      },
+    ]
+
+  -
+    const colorsList = [
+      {
+        name: "color[]",
+        value: "color-white",
+        label: "Белый",
+        checked: true,
+        disabled: false,
+      },
+      {
+        name: "color[]",
+        value: "color-grey",
+        label: "Серый",
+        checked: true,
+        disabled: false,
+      },
+      {
+        name: "color[]",
+        value: "color-tiffany",
+        label: "«Тиффани»",
+        checked: false,
+        disabled: false,
+      },
+      {
+        name: "color[]",
+        value: "color-black",
+        label: "Черный",
+        checked: false,
+        disabled: false,
+      },
+      {
+        name: "color[]",
+        value: "color-pink",
+        label: "Розовый",
+        checked: false,
+        disabled: false,
+      },
+      {
+        name: "color[]",
+        value: "color-orange",
+        label: "Оранжевый",
+        checked: false,
+        disabled: false,
+      },
+    ]
+
+  section.order-form.order-form--overflow
+    .container
+      .order-form__wrapper
+        h2.visually-hidden Форма заказа
+        .order-form__description
+          p Мы будем рады воплотить в жизнь ваши пожелания! Заполните простую форму заказа и мы свяжемся с вами, чтобы уточнить детали.
+        .order-form__inner(data-form-validate, data-callback="base")
+          form(method="post", action="https://echo.htmlacademy.ru/")
+            fieldset.order-form__fieldset
+              p.order-form__legend #[span Тип]
+              ul.order-form__list
+                each oneType in typesList
+                  li.order-form__item
+                    +custom-toggle({
+                      inputType: "radio",
+                      inputLabel: oneType.label,
+                      inputName: oneType.name,
+                      inputValue: oneType.value,
+                      inputChecked: oneType.checked,
+                      inputDisabled: oneType.disabled,
+                    }).custom-toggle--radio
+
+            fieldset.order-form__fieldset.order-form__fieldset--bg.order-form__fieldset--checkbox
+              p.order-form__legend #[span Цвет]
+              ul.order-form__list.order-form__list--checkbox
+                each oneColor in colorsList
+                  li.order-form__item
+                    +custom-toggle({
+                      inputLabel: oneColor.label,
+                      inputName: oneColor.name,
+                      inputValue: oneColor.value,
+                      inputChecked: oneColor.checked,
+                      inputDisabled: oneColor.disabled
+                    }).custom-toggle--checkbox
+
+            fieldset.order-form__fieldset.order-form__fieldset--size.order-form__fieldset--name
+              p.order-form__legend #[span ФИО]
+              ul.order-form__list
+                li.order-form__item
+                  +custom-input({
+                    inputLabel: "Имя:",
+                    inputName: "user-name",
+                    inputId: "user-name",
+                    inputPlaceholder: "Введите ваше имя*"
+                  })(data-validate-type="text", data-limitation="name", data-required)
+
+                li.order-form__item
+                  +custom-input({
+                    inputLabel: "Фамилия:",
+                    inputName: "user-surname",
+                    inputPlaceholder: "Укажите фамилию*"
+                  })(data-validate-type="text", data-limitation="name", data-required)
+
+                li.order-form__item
+                  +custom-input({
+                    inputLabel: "Отчество:",
+                    inputName: "user-middlename",
+                    inputPlaceholder: "Отчество, если желаете"
+                  })(data-validate-type="text", data-limitation="name")
+
+            fieldset.order-form__fieldset.order-form__fieldset--bg.order-form__fieldset--size.order-form__fieldset--phone
+              p.order-form__legend #[span тел]
+              ul.order-form__list
+                li.order-form__item
+                  +custom-input({
+                    inputType: "tel",
+                    inputName: "user-phone",
+                    inputPlaceholder: "+7 ХХХ ХХХ ХХ ХХ*",
+                    inputIconName: "icon-phone",
+                    inputIconWidth: 25,
+                    inputIconHeight: 24
+                  }).custom-input--phone(data-validate-type="phone", data-on-input-validate, data-required)
+
+            fieldset.order-form__fieldset.order-form__fieldset--bg.order-form__fieldset--size.order-form__fieldset--email
+              p.order-form__legend #[span E-mail]
+              ul.order-form__list
+                li.order-form__item
+                  +custom-input({
+                    inputType: "email",
+                    inputName: "user-email",
+                    inputPlaceholder: "Ваш E-mail*",
+                    inputIconName: "icon-email",
+                    inputIconWidth: 32,
+                    inputIconHeight: 21
+                  }).custom-input--email(data-validate-type="email", data-on-input-validate, data-required)
+
+            fieldset.order-form__fieldset.order-form__fieldset--size.order-form__fieldset--additionally
+              p.order-form__legend #[span Доп]
+              ul.order-form__list
+                li.order-form__item
+                  +custom-textarea({
+                    inputName: "more-description",
+                    inputPlaceholder: "Опишите все ваши пожелания к заказу"
+                  }).custom-textarea--description(data-validate-type="text")
+
+            fieldset.order-form__fieldset.order-form__fieldset--submit
+              small.order-form__required-fields *Поля обязательны для заполнения
+              +btn({type: "submit", text: "Отправить заказ"}).order-form__action

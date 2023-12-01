@@ -1,0 +1,93 @@
+.accordion {
+  & & {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  &__element:last-child {
+    margin-bottom: 0;
+  }
+
+  &__element {
+    border-bottom: 2px solid $color-gainsboro;
+    margin-bottom: 3px;
+
+    &:first-child {
+      border-bottom: 2px solid $color-gainsboro;
+    }
+  }
+
+  &__element > &__button {
+    svg {
+      transition: transform $trans-default;
+    }
+  }
+
+  &__element.is-active > &__button {
+    svg {
+      transform: rotate(45deg);
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 25px 30px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 27px;
+    position: relative;
+    transition: opacity $trans-default;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    text-align: left;
+
+    svg {
+      position: absolute;
+      top: 23px;
+      right: 10px;
+    }
+
+    &:hover,
+    &:focus {
+      opacity: 0.6;
+    }
+
+    &:active {
+      opacity: 0.3;
+    }
+
+    @include vp-768 {
+      font-size: 22px;
+      line-height: 29px;
+    }
+
+    @include vp-1150 {
+      font-size: 24px;
+      line-height: 32px;
+    }
+  }
+
+  &__wrapper {
+    padding: 0 30px;
+    padding-bottom: 20px;
+
+    p {
+      margin: 0;
+      font-size: 12px;
+      line-height: 17px;
+
+      @include vp-768 {
+        font-size: 14px;
+        line-height: 21px;
+      }
+
+      @include vp-1150 {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+  }
+}

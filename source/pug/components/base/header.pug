@@ -2,35 +2,84 @@ mixin header(headerMods, currentUrl)
   -
     const headerLinks = [
       {
-        href: "index.html",
-        text: "Главная"
+        name: "catalog",
+        href: "catalog.html",
+        text: "Каталог товаров",
+        isIcon: false,
+        iconWidth: 20,
+        iconHeight: 20,
       },
       {
-        href: "#",
-        text: "Страница 2"
+        name: "order",
+        href: "order.html",
+        text: "Вязание на заказ",
+        isIcon: false,
+        iconWidth: 20,
+        iconHeight: 20,
       },
       {
-        href: "#",
-        text: "Страница 3"
+        name: "search",
+        href: "search.html",
+        text: "Поиск по сайту",
+        isIcon: true,
+        iconWidth: 18,
+        iconHeight: 18,
+      },
+      {
+        name: "cart",
+        href: "cart.html",
+        text: "Корзина: пока пуста",
+        isIcon: true,
+        iconWidth: 21,
+        iconHeight: 21,
+      },
+      {
+        name: "goods",
+        href: "new-goods.html",
+        text: "Новые поступления",
+        isIcon: false,
+        iconWidth: 20,
+        iconHeight: 20,
+      },
+      {
+        name: "sale",
+        href: "sale.html",
+        text: "Распродажа",
+        isIcon: false,
+        iconWidth: 20,
+        iconHeight: 20,
+      },
+      {
+        name: "delivery",
+        href: "free-delivery.html",
+        text: "Бесплатная доставка по России",
+        isIcon: false,
+        iconWidth: 20,
+        iconHeight: 20,
       },
     ]
 
   header.header(class=headerMods)
     .container
-      if(currentUrl === "index.html")
-        //- lighthouse снимает 10 баллов SEO за <a> без href
-        span.header__logo Логотип
-      else
-        a.header__logo(href="index.html", aria-label="Переход на главную") Логотип
-      nav.main-nav
-        button.main-nav__toggle.btn-reset(type="button", aria-label="Переключатель отображения меню", aria-pressed="false")
-          +icon("icon-burger", 20, 20)
-        .main-nav__wrapper
+      .header__wrapper
+        if(currentUrl === "index.html")
+          span.header__logo
+            +logo()
+        else
+          a.header__logo(href="index.html", aria-label="Переход на главную")
+            +logo()
+
+        button.header__toggle(type="button", aria-label="Переключатель отображения меню", aria-pressed="false", data-nav-toggle)
+          span.header__toggle.header__toggle--open
+            +icon("icon-menu-open", 20, 20)
+          span.header__toggle.header__toggle--close
+            +icon("icon-menu-close", 20, 20)
+
+        nav.header__nav.main-nav(data-main-nav)
           ul.main-nav__list
-            each link in headerLinks
-              - const activeState = currentUrl === link.href
-              li.main-nav__item
-                if(activeState)
-                  span.main-nav__link.is-active= link.text
-                else
-                  a.main-nav__link(href=link.href)= link.text
+            each oneLink in headerLinks
+              li.main-nav__item(class=`main-nav__item--${oneLink.name}`)
+                a.main-nav__link(class=`${oneLink.isIcon ? "main-nav__link--icon" : ""}`, href=oneLink.href)
+                  if oneLink.isIcon
+                    +icon(`icon-${oneLink.name}`, oneLink.iconWidth, oneLink.iconHeight)
+                  span.main-nav__text= oneLink.text

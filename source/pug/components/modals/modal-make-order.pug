@@ -1,0 +1,46 @@
+mixin modal-make-order()
+  -
+    const sizeList = [
+      {
+        name: "size-s",
+        value: "size-s",
+        label: "s",
+        checked: true,
+        disabled: false,
+      },
+      {
+        name: "size-m",
+        value: "size-m",
+        label: "m",
+        checked: false,
+        disabled: false,
+      },
+      {
+        name: "size-l",
+        value: "size-l",
+        label: "l",
+        checked: false,
+        disabled: false,
+      },
+    ]
+
+  section.modal.modal--preload(data-modal="make-order")
+    .modal__wrapper
+      .modal__overlay(data-close-modal)
+      .modal__content.order
+        .title-h2.order__title
+          h2 Добавить в&nbsp;корзину
+        form.order__form(action="https://echo.htmlacademy.ru", method="post")
+          p Выберите размер:
+          ul
+            each oneSize in sizeList
+              li
+                +custom-toggle({
+                  inputLabel: oneSize.label,
+                  inputName: oneSize.name,
+                  inputValue: oneSize.value,
+                  inputChecked: oneSize.checked,
+                  inputDisabled: oneSize.disabled
+                }).custom-toggle--checkbox.custom-toggle--checkbox-order
+
+          button.order__submit(type="submit", data-open-modal="make-order-success") Добавить

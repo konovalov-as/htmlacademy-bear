@@ -1,0 +1,19 @@
+mixin production()
+  section.production
+    .container
+      .production__wrapper
+        .title-h3.production__title
+          img(src="../../img/svg/video.svg", width="32", height="22", alt="Видеокамера", loading="lazy")
+          h3 Процесс производства
+        .production__media(data-video-elem)
+          video(crossorigin="anonymous", controls, preload="none", poster="img/content/video-desktop@1x.webp", data-video-url="video/review-bear-project.mp4", width="260", height="150")
+            source(src="video/review-bear-project.mp4", type="video/mp4")
+            source(src="video/review-bear-project.ogg", type="video/ogg")
+            | Ваш браузер не поддерживает тег video
+            a(href="video/review-bear-project.mp4") О том как появляются наши товары
+          button(type="button", aria-label="Воспроизвести", title="Воспроизвести", data-play-video)
+            img(src="../../img/svg/play.svg", width="101", height="77", alt="Воспроизвести", loading="lazy")
+        .production__inner
+          .production__description
+            p По просьбам наших любимых фолловеров мы сняли для вас подробное видео о том, как появляются наши товары.
+          +btn({text: 'Сделать заказ', href: "make-order.html"}).production__make-order(data-open-modal="make-order")

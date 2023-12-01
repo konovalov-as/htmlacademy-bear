@@ -1,0 +1,39 @@
+mixin product-details()
+  -
+    const properties = [
+      "Материалы: полухлопковая пряжа, полубусины, холлофайбер",
+      "Размеры: Рост 30 см, вес 200 г",
+      "Цвет: бирюзовый и белый",
+    ]
+
+  section.product-details
+    .container
+      .product-details__wrapper
+        .product-details__inner
+          .product-details__picture
+            picture
+              source(type="image/webp", media=`(min-width: ${vp1150})`, srcset="img/content/photo-hare-desktop@1x.webp 1x, img/content/photo-hare-desktop@2x.webp 2x")
+              source(type="image/webp", media=`(min-width: ${vp768})`, srcset="img/content/photo-hare-tablet@1x.webp 1x, img/content/photo-hare-tablet@2x.webp 2x")
+              source(type="image/webp", srcset="img/content/photo-hare-mobile@1x.webp 1x, img/content/photo-hare-mobile@2x.webp 2x")
+              source(media=`(min-width: ${vp1150})`, srcset="img/content/photo-hare-desktop@1x.jpg 1x, img/content/photo-hare-desktop@2x.jpg 2x")
+              source(media=`(min-width: ${vp768})`, srcset="img/content/photo-hare-tablet@1x.jpg 1x, img/content/photo-hare-tablet@2x.jpg 2x")
+              img(src="img/content/photo-hare-mobile@1x.jpg", srcset="img/content/photo-hare-mobile@2x.jpg 2x", alt="Красивый зайчик-попрыгайчик", loading="lazy", width="260", height="195")
+          .product-details__info
+            .title-h2.product-details__title
+              h2 Зайчик-попрыгайчик
+            .product-details__price
+              p 1 200 ₽
+            p.product-details__property-title Детали
+            .product-details__list
+              ul
+                each oneProperty in properties
+                  li= oneProperty
+
+            .product-details__action
+              button.btn.product-details__btn(type="button") В корзину
+                +icon("icon-cart", 18, 18)
+              button.btn.product-details__btn(type="button") В избранное
+                +icon("icon-feature-heart", 18, 18)
+        .product-details__description
+          span Описание
+          p Вязаный зайчик ручной работы размером 30 см. Размер игрушки хорошо подойдет для маленьких деток. Ножки и ручки ввязаны. Материал игрушки — полухлопковая пряжа, наполнитель — гиппоаллергенный холлофайбер. Это качественная игрушка ручной работы, выполненная из экологически чистых материалов по цене, доступной каждому. Пряжа, используемая для игрушек, безопасна для кожи и не вызовет аллергии.  Материал, из которого связана игрушка ручной работы, очень мягкий, плюшевый и приятный на ощупь. Это амечательный подарок для ребенка на любой праздник: день рождения, 8 марта, 23 февраля, Новый год, именины — который прослужит долгие годы. Игрушка ручной работы прекрасно смотрится в качестве предмета интерьера.

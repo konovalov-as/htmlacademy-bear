@@ -1,0 +1,9 @@
+mixin not-found()
+  .not-found
+    .container
+      .not-found__wrapper
+        p Страница, которую вы искали, не найдена
+        p Возможно, она была удалена, перенесена или её адрес набран с ошибкой
+        .not-found__picture
+          img(src="img/svg/kitty.svg", alt="Забавный котёнок с клубком шерсти", width="300", height="240", loading="lazy")
+        +btn({text: "На главную", href: 'index.html'}).not-found__btn

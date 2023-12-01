@@ -1,0 +1,38 @@
+.copyright {
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity $trans-default;
+
+    & svg,
+    & img {
+      width: 27px;
+      height: 34px;
+    }
+
+    & svg {
+      fill: $color-downy;
+      transition: fill $trans-default;
+    }
+
+    &:hover,
+    &:focus {
+      & svg {
+        fill: $color-puerto-rico;
+      }
+    }
+
+    &:active {
+      opacity: 0.3;
+    }
+  }
+
+  &__text {
+    font-size: 19px;
+    line-height: 18px;
+    font-weight: 700;
+    margin: 0;
+    margin-right: 28px;
+  }
+}

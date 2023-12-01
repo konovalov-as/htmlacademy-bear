@@ -1,0 +1,27 @@
+mixin product-card(options ={})
+  - const oneProduct = options.oneProduct ? options.oneProduct : false
+
+  li.product-card&attributes(attributes)
+    .product-card__wrapper
+      a.product-card__picture-link(href="more-details.html")
+        if oneProduct.textLabel
+          .product-card__label(class=oneProduct.styleLabel)
+            span= oneProduct.textLabel
+        .product-card__picture
+          picture
+            source(type="image/webp", media=`(min-width: ${vp1150})`, srcset=oneProduct.desktopWebpImg)
+            source(type="image/webp", media=`(min-width: ${vp768})`, srcset=oneProduct.tabletWebpImg)
+            source(type="image/webp", srcset=oneProduct.mobileWebpImg)
+            source(media=`(min-width: ${vp1150})`, srcset=oneProduct.desktopImg)
+            source(media=`(min-width: ${vp768})`, srcset=oneProduct.tabletImg)
+            img(src=oneProduct.mobileImg, srcset=oneProduct.mobileRetinaImg, alt=oneProduct.altText, width=oneProduct.widthImg, height=oneProduct.heightImg, loading="lazy")
+      .product-card__description
+        .title-h3.product-card__title
+          a(href="more-details.html")
+            h3!= oneProduct.productTitle
+        .product-card__characteristics
+          p= oneProduct.productCharacteristics
+        .product-card__buy-wrapper
+          span= oneProduct.productPrice
+          a.product-card__buy-link(href="add-to-cart.html", aria-label="Добавить в корзину", data-open-modal="make-order-success")
+            +icon("icon-cart", 18, 18)

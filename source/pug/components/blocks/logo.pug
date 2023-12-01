@@ -1,0 +1,5 @@
+mixin logo()
+  picture
+    source(media=`(min-width: ${vp1150})`, srcset=`img/svg/logo/logo-desktop.svg`)
+    source(media=`(min-width: ${vp768})`, srcset=`img/svg/logo/logo-tablet.svg`)
+    img(src=`img/svg/logo/logo-mobile.svg`, alt="Интернет-магазин «Мишка»", width="86", height="35", loading="lazy")

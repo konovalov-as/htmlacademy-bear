@@ -1,0 +1,63 @@
+mixin advantages()
+  -
+    const advantages = [
+      {
+        text: "Экологически чистые&nbsp;материалы",
+        name: "flower",
+        img: "../../img/svg/feature-flower.svg",
+        widthImg: 32,
+        heightImg: 37,
+        altText: "Цветочек",
+      },
+      {
+        text: "Скандинавский стиль по&nbsp;российской цене",
+        name: "money",
+        img: "../../img/svg/feature-money.svg",
+        widthImg: 47,
+        heightImg: 27,
+        altText: "Купюра",
+      },
+      {
+        text: "Увеличивает лайки на&nbsp;фотографиях",
+        name: "heart",
+        img: "../../img/svg/feature-heart.svg",
+        widthImg: 34,
+        heightImg: 27,
+        altText: "Сердечко",
+      },
+      {
+        text: "Связано вручную с любовью&nbsp;и&nbsp;умилением",
+        name: "ball",
+        img: "../../img/svg/feature-ball.svg",
+        widthImg: 35,
+        heightImg: 34,
+        altText: "Клубок шерсти",
+      },
+      {
+        text: "Поддержка отечественного производителя",
+        name: "rocket",
+        img: "../../img/svg/feature-rocket.svg",
+        widthImg: 55,
+        heightImg: 23,
+        altText: "Ракета",
+      },
+      {
+        text: "Поставляется в подарочной&nbsp;упаковке",
+        name: "gift",
+        img: "../../img/svg/feature-gift.svg",
+        widthImg: 33,
+        heightImg: 32,
+        altText: "Подарочек",
+      },
+    ]
+
+  section.advantages
+    .container
+      .advantages__wrapper
+        .title-h2.advantages__title
+          h2 Коротко о нас:
+        ul.advantages__list
+          each oneAdvantage in advantages
+            li.advantages__item(class=`advantages__item--${oneAdvantage.name}`)
+              img(src=oneAdvantage.img, width=oneAdvantage.widthImg, height=oneAdvantage.heightImg, alt=oneAdvantage.altText, loading="lazy")
+              != oneAdvantage.text

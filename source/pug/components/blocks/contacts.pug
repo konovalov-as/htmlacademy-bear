@@ -1,0 +1,17 @@
+mixin contacts()
+  section.contacts
+    .container
+      .contacts__wrapper
+        .contacts__title
+          h2 Контакты
+        .contacts__block
+          table
+            tr
+              td.contacts__left-cell e-mail:
+              td
+                a(href="mailto:info@mimimishkashop.ru") info@mimimishkashop.ru
+            tr
+              td.contacts__left-cell адрес:
+              td набережная реки Карповки, 5, литера П, этаж 5, г. Санкт-Петербург
+        .contacts__mapbox(data-mapbox, data-map-center-coord-x="59.969937", data-map-center-coord-y="30.318272", data-pin-coord-x="59.968516", data-pin-coord-y="30.317768", data-zoom="16", data-map-pin="img/svg/map-pin.svg", data-width="66", data-height="101", data-alt="", data-header="Мишка: Интернет-магазин", data-body="г. Санкт-Петербург", data-footer="набережная реки Карповки, 5, литера П, этаж 5")
+        +btn({text: "Напишите нам"}).contacts__write-to-us(data-open-modal="feedback")

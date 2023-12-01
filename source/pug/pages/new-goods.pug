@@ -1,0 +1,21 @@
+extends ../components/base/layout
+
+block variables
+  include ../variables
+  - const title = "Новые поступления - HTML Academy: Мишка" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ""
+  - const hasFooter = true
+  - const footerMods = ""
+  - const currentUrl = "" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+block main
+  main.main
+    //- на странице запрещен "голый" код
+    //- все блоки вставляются из папки pug/components/blocks
+    +page-title("Новые поступления")
+    +new-goods()
+
+block modals
+  +modal-make-order-success()

@@ -1,2 +1,36 @@
 mixin modal-feedback()
-  p.modal__description Обычная модалка
+  section.modal.modal--preload(data-modal="feedback")
+    .modal__wrapper
+      .modal__overlay(data-close-modal)
+      .modal__content.feedback
+        .title-h2.feedback__title
+          h2 Напишите нам
+        .feedback__wrapper(data-form-validate, data-callback="base")
+          form(action="https://echo.htmlacademy.ru", method="post")
+            ul
+              li
+                +custom-input({
+                  inputLabel: "Имя:",
+                  inputName: "feedback-user-name",
+                  inputId: "user-name",
+                  inputPlaceholder: "Введите ваше имя*"
+                }).custom-input--feedback(data-validate-type="text", data-limitation="name", data-required)
+
+              li
+                +custom-input({
+                  inputLabel: "Телефон:",
+                  inputType: "tel",
+                  inputName: "feedback-user-phone",
+                  inputPlaceholder: "+7 ХХХ ХХХ ХХ ХХ*",
+                  inputIconName: "icon-phone",
+                  inputIconWidth: 25,
+                  inputIconHeight: 24
+                }).custom-input--phone.custom-input--feedback(data-validate-type="phone", data-on-input-validate, data-required)
+
+              li
+                +custom-textarea({
+                  inputName: "feedback-more-description",
+                  inputPlaceholder: "Опишите все ваши пожелания к заказу"
+                }).custom-textarea--description(data-validate-type="text")
+
+            +btn({text: "Отправить"})(type="submit")

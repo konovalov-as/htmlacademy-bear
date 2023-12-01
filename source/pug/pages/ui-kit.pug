@@ -1,7 +1,37 @@
 extends ../components/base/layout
 
 block variables
-  - const title = "UI-kit"
+  include ../variables
+  - const title = "UI-kit - HTML Academy: Мишка"
+  -
+    const oneProduct = {
+      textLabel: "",
+      styleLabel: "",
+      desktopWebpImg: "img/content/photo-hare-desktop@1x.webp 1x, img/content/photo-hare-desktop@2x.webp 2x",
+      tabletWebpImg: "img/content/photo-hare-tablet@1x.webp 1x, img/content/photo-hare-tablet@2x.webp 2x",
+      mobileWebpImg: "img/content/photo-hare-mobile@1x.webp 1x, img/content/photo-hare-mobile@2x.webp 2x",
+      desktopImg: "img/content/photo-hare-desktop@1x.jpg 1x, img/content/photo-hare-desktop@2x.jpg 2x",
+      tabletImg: "img/content/photo-hare-tablet@1x.jpg 1x, img/content/photo-hare-tablet@2x.jpg 2x",
+      mobileImg: "img/content/photo-hare-mobile@1x.jpg",
+      mobileRetinaImg: "img/content/photo-hare-mobile@2x.jpg 2x",
+      widthImg: 260,
+      heightImg: 195,
+      altText: "Зайчик-попрыгайчик",
+      productTitle: "Зайчик-попрыгайчик",
+      productCharacteristics: "Рост 30 см, вес 200 г",
+      productPrice: "1 200 ₽",
+    }
+  -
+    const onePreviewProduct = {
+      webpImg: "img/content/triple-set-preview@1x.webp 1x, img/content/triple-set-preview@2x.webp 2x",
+      img: "img/content/triple-set-preview@1x.jpg",
+      retinaImg: "img/content/triple-set-preview@2x.jpg 2x",
+      altText: "Вязаная корзинка",
+      title: "Корзинка вязанная",
+      text: "Экологически чистая пряжа, ручная работа",
+      widthImg: 92,
+      heightImg: 92,
+    }
 
 block main
   style
@@ -11,7 +41,7 @@ block main
   main
     .uikit
       //----------------------- Разделы с компонентами
-      .uikit__sections(data-scroll-lock-fill-gap)
+      .uikit__sections
         label(for="section-burger")
           span Разделы&nbsp;компонентов
         input.visually-hidden(type="checkbox", checked, id="section-burger")
@@ -23,51 +53,73 @@ block main
               a(href="#buttons") Кнопки
             li
               a(href="#forms") Элементы форм
+            li
+              a(href="#goods") Карточка товара
+            li
+              a(href="#product-preview") Предпросмотор товара
 
       //----------------------------------------------
       .container
         a.uikit__header-link(href="sitemap.html")
-          img(src="https://via.placeholder.com/300x150", width="300", alt="Логотип проекта")
-        h1.uikit__h1 Компоненты, используемые на проекте
+          +logo()
+        h1 Компоненты, используемые на проекте
 
-        section.uikit__section
-          h2.uikit__h2 Название компонента или группы компонентов
+        section
+          h2 Название компонента или группы компонентов
           p.uikit__text Информация о компоненте (подсказки \ предупреждение \ важная информация)
-          .uikit__component
-            p.uikit__text  Класс компонента \ модификаторы
-            pre
-              |
-              code(class="language-pug").
-                p Пример кода
+          p.uikit__text  Класс компонента \ модификаторы
+          pre
+            |
+            code(class="language-pug").
+              p Пример кода
 
         //- Модальные окна
-        section.uikit__section(id="modals")
-          h2.uikit__h2 Модальные окна
+        section(id="modals")
+          h2 Модальные окна
           .uikit__component
-            p.uikit__text.uikit__text--class .modal \ .modal--feedback
+            p.uikit__text.uikit__text--class .modal
             +btn({text: "modal-feedback"})(data-open-modal="feedback")
             pre
               |
               code(class="language-pug").
                 +btn({text: "modal-feedback"})(data-open-modal="feedback")
           .uikit__component
-            p.uikit__text.uikit__text--class .modal \ .modal--success
-            +btn({text: "modal-success"})(data-open-modal="success")
+            p.uikit__text.uikit__text--class .modal
+            +btn({text: "make-order-success"})(data-open-modal="make-order-success")
+
             pre
               |
               code(class="language-pug").
-                +btn({text: "modal-success"})(data-open-modal="success")
+                +btn({text: "make-order-success"})(data-open-modal="make-order-success")
+
+          .uikit__component
+            p.uikit__text.uikit__text--class .modal
+            +btn({text: "make-order"})(data-open-modal="make-order")
+
+            pre
+              |
+              code(class="language-pug").
+                +btn({text: "make-order"})(data-open-modal="make-order")
+
+          .uikit__component
+            p.uikit__text.uikit__text--class .modal
+            +btn({text: "send-order"})(data-open-modal="send-order")
+
+            pre
+              |
+              code(class="language-pug").
+                +btn({text: "send-order"})(data-open-modal="send-order")
 
         //- Кнопки
-        section.uikit__section(id="buttons")
-          h2.uikit__h2 Кнопки
+        section(id="buttons")
+          h2 Кнопки
           .uikit__component
             p.uikit__text.uikit__text--class .btn \ default \ button
             +btn({text: "Кнопка"})
             pre
               |
               code(class="language-pug").
-                +btn({text: "Текст", href: "#"})
+                +btn({text: "Кнопка"})
           .uikit__component
             p.uikit__text.uikit__text--class .btn \ .btn--red \ link
             +btn({text: "Текст", href: "#", isExternal: true}).btn--red(aria-label="Просто ссылка")
@@ -84,8 +136,8 @@ block main
                 +btn({text: "Текст"})(disabled)
 
         //- Элементы форм
-        section.uikit__section(id="forms")
-          h2.uikit__h2 Элементы форм
+        section(id="forms")
+          h2 Элементы форм
           .uikit__component
             p.uikit__text.uikit__text--class .custom-input \ type="text"
             +custom-input({
@@ -159,6 +211,25 @@ block main
                   inputValue: "user-agreement-1",
                   inputChecked: false
                 }).custom-toggle--checkbox
+          .uikit__component
+            p.uikit__text.uikit__text--class +custom-toggle \ default
+            +custom-toggle({
+              inputType: "radio",
+              inputLabel: "Чекбокс",
+              inputName: "user-agreement",
+              inputValue: "user-agreement-1",
+              inputChecked: false
+            }).custom-toggle--radio
+            pre
+              |
+              code(class="language-pug").
+                +custom-toggle({
+                  inputType: "radio",
+                  inputLabel: "Чекбокс",
+                  inputName: "user-agreement",
+                  inputValue: "user-agreement-1",
+                  inputChecked: false
+                }).custom-toggle--radio
 
 
           .uikit__component
@@ -168,7 +239,7 @@ block main
               placeholder: "Выберите одну из опций",
               error: "Выберите тему обращения",
               optionsList: [{text: "Тема 1", value: "id-1"}, {text: "Тема 2", value: "id-2"}, {text: "Тема 3", value: "id-3"}, {text: "Тема 4", value: "id-4"}, {text: "Тема 5", value: "id-5"}, {text: "Тема 6", value: "id-6"}]
-            })(data-select, data-validate-type="select", data-name="some-name", data-id="id-example-1").custom-select
+            }).custom-select(data-select, data-validate-type="select", data-name="some-name", data-id="id-example-1")
             pre
               |
               code(class="language-pug").
@@ -178,12 +249,48 @@ block main
                   optionsList: [{text: "Тема 1", value: "id-1"}, {text: "Тема 2", value: "id-2"}, {text: "Тема 3", value: "id-3"}, {text: "Тема 4", value: "id-4"}, {text: "Тема 5", value: "id-5"}, {text: "Тема 6", value: "id-6"}]
                 })(data-select, data-validate-type="select", data-name="some-name", data-id="id-example-1").custom-select
 
+        //- Карточка товара
+        section(id="goods")
+          h2 Карточка товара
+          .uikit__component
+            p.uikit__text li.product-card
+            ul.goods
+              +product-card({
+                  oneProduct,
+                }).goods__item
+            pre
+              |
+              code(class="language-pug").
+                +product-card({
+                    oneProduct,
+                  }).goods__item
+
+        //- Предпросмотор товара
+        section(id="product-preview")
+          h2 Карточка предпросмотра товара
+          .uikit__component
+            p.uikit__text .product-preview
+            +product-preview({
+                oneProduct: onePreviewProduct,
+              })
+            pre
+              |
+              code(class="language-pug").
+                +product-preview({
+                  oneProduct: onePreviewProduct
+                })
+
 
   script
     include ../../js/inline/ui-kit.js
 
 block modals
-  +modal("modal--feedback")(data-modal="feedback")
-    +modal-feedback()
-  +modal("modal--success modal--no-scale modal--fit-content")(data-modal="success")
-    +modal-success()
+  +modal-make-order()
+  +modal-make-order-success()
+  +modal-feedback()
+  +modal-send-order()
+
+  //- +modal("modal--feedback")(data-modal="feedback")
+  //-   +modal-feedback()
+  //- +modal("modal--success modal--no-scale modal--fit-content")(data-modal="success")
+  //-   +modal-success()

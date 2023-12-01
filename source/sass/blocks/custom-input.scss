@@ -1,58 +1,224 @@
 .custom-input,
 .custom-textarea {
   position: relative;
-
   display: flex;
-  width: 530px;
-  padding: 14px 0 28px 0;
+  font-size: 17px;
+  line-height: 18px;
+  font-weight: 700;
+  // margin-bottom: 20px;
 
-  @media screen and (max-width: 767px) {
-    padding: 4px 0 48px 0;
-    width: 100%;
+  @include vp-768 {
+    font-size: 19px;
+    line-height: 18px;
+  }
+
+  svg {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    fill: $color-very-light-grey;
+    width: 25px;
+    height: 24px;
+
+    @include vp-768 {
+      right: 24px;
+    }
+
+    @include vp-1150 {
+      right: 0;
+    }
   }
 
   label {
-    display: flex;
-    align-items: center;
+    display: block;
     width: 100%;
 
-    @media screen and (max-width: 767px) {
-      align-items: flex-start;
-      flex-direction: column;
+    input {
+      width: 100%;
+      font-size: 17px;
+      line-height: 18px;
+      color: $color-charcoal;
+      padding-top: 15px;
+      padding-bottom: 16px;
+      padding-left: 0;
+      padding-right: 50px;
+      border: 2px solid transparent;
+      border-bottom-color: $color-default-black;
+      transition: border-bottom-color $trans-default;
+      outline: none;
+
+      @include vp-768 {
+        font-size: 19px;
+        line-height: 18px;
+        padding-top: 9px;
+        padding-bottom: 12px;
+        padding-left: 20px;
+        padding-right: 50px;
+      }
+
+      & + svg {
+        transition: fill $trans-default;
+      }
+
+      &:hover + svg,
+      &:focus + svg {
+        fill: $color-downy-4;
+      }
+
+      &:hover,
+      &:focus {
+        border-bottom-color: $color-downy-4;
+      }
+
+      &:active {
+        border-bottom-color: rgba($color-downy-4, 0.5);
+      }
+    }
+
+    textarea {
+      width: 100%;
+      border: 2px solid $color-charcoal;
+      padding: 13px 15px;
+      transition: border-color $trans-default;
+
+      &:hover,
+      &:focus {
+        outline: none;
+        border-color: $color-downy-4;
+      }
+
+      &:active {
+        border-color: rgba($color-downy-4, 0.5);
+      }
     }
 
     input,
     textarea {
-      flex-grow: 1;
-      max-width: 300px;
-      min-height: 48px;
-      margin-left: auto;
-      padding: 10px;
-
-      border: 2px solid rgba(#000000, 0.2);
-      border-radius: 5px;
-      outline: none;
-
-      transition: border 0.3s ease;
-
-      @media screen and (max-width: 767px) {
-        max-width: unset;
-        width: 100%;
+      &::placeholder {
+        color: rgba($color-charcoal, 0.3);
       }
+    }
 
-      &:hover {
-        border: 2px solid rgba(#000000, 0.5);
-      }
-
-      &:focus {
-        border: 2px solid rgba(#000000, 0.8);
-      }
+    @include vp-768 {
+      display: flex;
+      align-items: center;
     }
   }
 
   &__label {
-    @media screen and (max-width: 767px) {
-      margin: 0 0 18px 0;
+    margin-right: 26px;
+  }
+
+  &--phone {
+    margin-bottom: 1px;
+
+    & label {
+      position: relative;
+    }
+
+    svg {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      fill: $color-very-light-grey;
+      width: 25px;
+      height: 24px;
+
+      @include vp-768 {
+        right: 24px;
+      }
+
+      @include vp-1150 {
+        right: 0;
+      }
+    }
+  }
+
+  &--email {
+    & label {
+      position: relative;
+    }
+
+    svg {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      fill: $color-very-light-grey;
+      width: 31px;
+      height: 21px;
+
+      @include vp-768 {
+        right: 24px;
+      }
+
+      @include vp-1150 {
+        right: 0;
+      }
+    }
+  }
+
+  &--description {
+    & textarea {
+      min-height: 142px;
+    }
+  }
+
+  &--feedback {
+    label {
+      display: block;
+
+      input {
+        padding-left: 0;
+      }
+    }
+
+    .custom-input__label {
+      margin-right: 0;
+    }
+  }
+
+  &--search {
+    margin-bottom: 0;
+
+    label {
+      input {
+        padding-left: 0;
+
+        @include vp-768 {
+          padding-right: 110px;
+        }
+      }
+    }
+  }
+
+  &--quantity {
+    margin: 0;
+
+    label {
+      input {
+        border: 1px solid $color-silver;
+        padding: 8px 0;
+        width: 36px;
+        text-align: center;
+        transition: border-color $trans-default;
+
+        &:hover,
+        &:focus {
+          border-color: $color-downy-4;
+        }
+
+        &:active {
+          border-color: rgba($color-downy-4, 0.5);
+        }
+
+        @include vp-768 {
+          width: 48px;
+          padding: 10px 0;
+        }
+      }
     }
   }
 
@@ -60,12 +226,9 @@
     position: absolute;
     right: 0;
     bottom: 35px;
-
-    color: #ff1553;
-
+    color: $color-torch-red;
     opacity: 0;
-
-    transition: opacity 0.3s ease;
+    transition: opacity $trans-default;
 
     @media screen and (max-width: 767px) {
       bottom: 20px;
@@ -75,22 +238,24 @@
   &.is-invalid {
     input,
     textarea {
-      border: 2px solid #ff1553;
+      border-bottom-color: $color-torch-red;
+      transition: border-bottom-color $trans-default;
 
       &:focus,
       &:hover {
-        border: 2px solid rgba(#ff1553, 0.5);
+        border-bottom-color: rgba($color-torch-red, 0.5);
       }
     }
   }
 
   &.is-valid {
     input {
-      border: 2px solid #22b259;
+      border-bottom-color: $color-downy-4;
+      transition: border-bottom-color $trans-default;
 
       &:focus,
       &:hover {
-        border: 2px solid rgba(#22b259, 0.5);
+        border-bottom-color: rgba($color-downy-4, 0.5);
       }
     }
   }
@@ -101,11 +266,11 @@
     bottom: -5px;
 
     &.is-invalid {
-      color: #ff0000;
+      color: $color-default-red;
     }
 
     &.is-valid {
-      color: #15ab07;
+      color: $color-islamic-green;
     }
   }
 }

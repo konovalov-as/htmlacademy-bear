@@ -1,0 +1,155 @@
+.advantages {
+  &__wrapper {
+    margin-bottom: 55px;
+
+    @include vp-768 {
+      margin-bottom: 81px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @include vp-1150 {
+      max-width: 700px;
+      margin: 0 auto;
+      margin-bottom: 91px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 30px;
+
+    @include vp-768 {
+      margin-bottom: 50px;
+    }
+
+    @include vp-1150 {
+      margin-bottom: 47px;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 20px;
+
+    @include vp-768 {
+      display: flex;
+      flex-wrap: wrap;
+      row-gap: 59px;
+      column-gap: 20px;
+      font-size: 20px;
+      line-height: 22px;
+    }
+  }
+
+  &__item {
+    margin-bottom: 29px;
+
+    img {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 20px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include vp-768 {
+      flex-basis: calc(50% - 20px);
+      margin-bottom: 0;
+    }
+
+    &--flower {
+      img {
+        width: 32px;
+        height: 37px;
+
+        @include vp-768 {
+          margin-bottom: 17px;
+        }
+      }
+
+      @include vp-768 {
+        order: -6;
+      }
+    }
+
+    &--money {
+      margin-bottom: 34px;
+
+      img {
+        width: 47px;
+        height: 27px;
+        margin-bottom: 27px;
+
+        @include vp-768 {
+          margin-bottom: 23px;
+        }
+      }
+
+      @include vp-768 {
+        order: -4;
+        margin-bottom: 0;
+      }
+    }
+
+    &--heart {
+      img {
+        width: 34px;
+        height: 27px;
+        margin-bottom: 22px;
+
+        @include vp-768 {
+          margin-bottom: 27px;
+        }
+      }
+
+      @include vp-768 {
+        order: -2;
+      }
+    }
+
+    &--ball {
+      margin-bottom: 32px;
+
+      img {
+        width: 35px;
+        height: 34px;
+      }
+
+      @include vp-768 {
+        order: -5;
+        margin-bottom: 0;
+      }
+    }
+
+    &--rocket {
+      img {
+        width: 55px;
+        height: 23px;
+        margin-bottom: 27px;
+      }
+
+      @include vp-768 {
+        order: -3;
+      }
+    }
+
+    &--gift {
+      img {
+        width: 33px;
+        height: 32px;
+        margin-bottom: 22px;
+      }
+
+      @include vp-768 {
+        order: -1;
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+mixin modal-send-order()
+  section.modal.modal--preload(data-modal="send-order")
+    .modal__wrapper
+      .modal__overlay(data-close-modal)
+      .modal__content.order
+        .title-h2.order__title
+          h2 Ваш заказ отправлен успешно
+        +btn({text: 'Ок'})(type="button", data-close-modal, data-focus)

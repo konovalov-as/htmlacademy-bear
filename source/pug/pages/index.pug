@@ -1,18 +1,30 @@
 extends ../components/base/layout
 
 block variables
-  - const title = "ProjectName" //- на страницах кроме главной используйте О нас — ProjectName
+  include ../variables
+  - const title = "HTML Academy: Мишка" //- на страницах кроме главной используйте О нас — ProjectName
   - const wrapperMods = ""
   - const hasHeader = true
-  - const headerMods = ""
+  - const headerMods = "header--decor"
   - const hasFooter = true
   - const footerMods = ""
   - const currentUrl = "index.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
 
 block main
-  main
+  main.main
     //- на странице запрещен "голый" код
     //- все блоки вставляются из папки pug/components/blocks
     +intro()
+    +week-product()
+    +advantages()
+    +reviews()
+    +contacts()
 
 block modals
+  +modal-make-order()
+  +modal-make-order-success()
+  +modal-feedback()
+
+  //- Для корректной работы Yandex JavaScript API необходимо указать параметр HTTP Referer для ключей: Key #1.
+  //- 44c2d6f7-48e3-4089-894e-b8863ee921f1
+  script(src="https://api-maps.yandex.ru/v3/?apikey=44c2d6f7-48e3-4089-894e-b8863ee921f1&lang=ru_RU", defer)

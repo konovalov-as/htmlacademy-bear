@@ -1,0 +1,32 @@
+mixin week-product()
+  section.week-product.week-product--decor
+    .container
+      .week-product__wrapper
+        .title-h2.week-product__title
+          h2 Вязаные корзинки
+        span.week-product__subtitle Товар недели
+        .week-product__description
+          p Экологически чистая пряжа, ручная работа. Доступны в шести расцветках и трех размерах.
+        .week-product__characteristics
+          table
+            tr
+              td.week-product__left-cell Цвет:
+              td «Тиффани»/серый
+            tr
+              td.week-product__left-cell Диаметр:
+              td 25 см
+            tr
+              td.week-product__left-cell Высота:
+              td 15 см
+
+        .week-product__picture
+          picture
+            source(type="image/webp", media=`(min-width: ${vp1150})`, srcset="img/content/triple-set-desktop@1x.webp 1x, img/content/triple-set-desktop@2x.webp 2x")
+            source(type="image/webp", media=`(min-width: ${vp768})`, srcset="img/content/triple-set-tablet@1x.webp 1x, img/content/triple-set-tablet@2x.webp 2x")
+            source(type="image/webp", srcset="img/content/triple-set-mobile@1x.webp 1x, img/content/triple-set-mobile@2x.webp 2x")
+            source(media=`(min-width: ${vp1150})`, srcset="img/content/triple-set-desktop@1x.jpg 1x, img/content/triple-set-desktop@2x.jpg 2x")
+            source(media=`(min-width: ${vp768})`, srcset="img/content/triple-set-tablet@1x.jpg 1x, img/content/triple-set-tablet@2x.jpg 2x")
+            img(src="img/content/triple-set-mobile@1x.jpg", srcset="img/content/triple-set-mobile@2x.jpg 2x", alt="Фото вязаных корзинок трех размеров", width="260", height="315", loading="lazy")
+        .week-product__price
+          span Цена: 990 ₽
+        +btn({text: "Заказать", href: "order.html"}).week-product__order(data-open-modal="make-order")

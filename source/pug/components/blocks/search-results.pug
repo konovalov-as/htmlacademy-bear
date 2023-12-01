@@ -1,0 +1,49 @@
+mixin search-results()
+  -
+    const previewProducts = [
+      {
+        webpImg: "img/content/triple-set-preview@1x.webp 1x, img/content/triple-set-preview@2x.webp 2x",
+        img: "img/content/triple-set-preview@1x.jpg",
+        retinaImg: "img/content/triple-set-preview@2x.jpg 2x",
+        altText: "Вязаная корзинка",
+        title: "Корзинка вязанная",
+        text: "Экологически чистая пряжа, ручная работа",
+        widthImg: 92,
+        heightImg: 92,
+      },
+      {
+        webpImg: "img/content/brown-basket-preview@1x.webp 1x, img/content/brown-basket-preview@2x.webp 2x",
+        img: "img/content/brown-basket-preview@1x.jpg",
+        retinaImg: "img/content/brown-basket-preview@2x.jpg 2x",
+        altText: "Вязаная корзинка корричнево-кремового цвета",
+        title: "Корзинка ручной работы",
+        text: "Материал хлопок, корричнево-кремового цвета",
+        widthImg: 92,
+        heightImg: 92,
+      },
+      {
+        webpImg: "img/content/brown-basket-preview@1x.webp 1x, img/content/brown-basket-preview@2x.webp 2x",
+        img: "img/content/brown-basket-preview@1x.jpg",
+        retinaImg: "img/content/brown-basket-preview@2x.jpg 2x",
+        altText: "Вязаная корзинка корричнево-кремового цвета",
+        title: "Корзинка ручной работы",
+        text: "Материал хлопок, корричнево-кремового цвета",
+        widthImg: 92,
+        heightImg: 92,
+      },
+    ]
+
+  section.search-results
+    .container
+      .search-results__wrapper
+        h2.visually-hidden Результаты поиска
+        .search-results__text
+          p Результаты поиска "корзинка"
+            a(href="search.html") Изменить запрос
+        ul.search-results__list
+          each onePreviewProduct in previewProducts
+            li.search-results__item
+              a.search-results__link(href="#")
+                +product-preview({
+                  oneProduct: onePreviewProduct
+                })

@@ -1,0 +1,18 @@
+.title-h2 {
+  h2 {
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 30px;
+    margin: 0;
+
+    @include vp-768 {
+      font-size: 43px;
+      line-height: 50px;
+    }
+
+    @include vp-1150 {
+      font-size: 53px;
+      line-height: 57px;
+    }
+  }
+}

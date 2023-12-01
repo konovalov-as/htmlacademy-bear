@@ -1,0 +1,254 @@
+.product-card {
+  @include vp-768 {
+    width: 100%;
+  }
+
+  @include vp-1150 {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__wrapper {
+    @include vp-768 {
+      display: flex;
+    }
+
+    @include vp-1150 {
+      display: flex;
+      flex-direction: column;
+      flex-basis: 100%;
+    }
+  }
+
+  &__picture-link {
+    position: relative;
+    color: $color-default-black;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      & + .product-card__description {
+        box-shadow: 0 6px 10px 0 rgba($color-default-black, 0.1);
+      }
+    }
+
+    &:active {
+      & + .product-card__description {
+        box-shadow: 0 3px 5px 0 rgba($color-default-black, 0.1);
+      }
+    }
+
+    @include vp-768 {
+      width: 50%;
+    }
+
+    @include vp-1150 {
+      display: block;
+      width: auto;
+    }
+  }
+
+  &__label {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 14px;
+    color: $color-default-white;
+    transform: skew(-10deg);
+    border-radius: 5px;
+
+    @include vp-768 {
+      font-size: 15px;
+      line-height: 17px;
+    }
+
+    @include vp-1150 {
+      font-size: 16px;
+      line-height: 19px;
+    }
+
+    &--new {
+      background-color: rgba($color-downy, 0.7);
+    }
+
+    &--sale {
+      background-color: rgba($color-torch-red, 0.7);
+    }
+
+    span {
+      transform: skew(10deg);
+    }
+  }
+
+  &__picture {
+    display: block;
+    background-color: $color-whisper-4;
+
+    @include padding-hack-img(195, 260);
+
+    &::before {
+      @include vp-768 {
+        padding-bottom: calc(334 / 334 * 100%);
+      }
+
+      @include vp-1150 {
+        padding-bottom: calc(462 / 316 * 100%);
+      }
+    }
+  }
+
+  &__description {
+    border: 1px solid $color-whisper;
+    padding-top: 26px;
+    padding-bottom: 27px;
+    padding-left: 27px;
+    padding-right: 27px;
+    transition: box-shadow $trans-default;
+
+    &:hover,
+    &:focus {
+      box-shadow: 0 6px 10px 0 rgba($color-default-black, 0.1);
+    }
+
+    &:active {
+      box-shadow: 0 3px 5px 0 rgba($color-default-black, 0.1);
+    }
+
+    @include vp-768 {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+    }
+
+    @include vp-1150 {
+      width: auto;
+      flex-basis: 100%;
+    }
+  }
+
+  &__title {
+    h3 {
+      margin: 0;
+      margin-bottom: 4px;
+    }
+
+    a {
+      transition: color $trans-default;
+
+      &:hover,
+      &:focus {
+        color: rgba($color-default-black, 0.6);
+      }
+
+      &:active {
+        color: rgba($color-default-black, 0.3);
+      }
+
+      @include vp-768 {
+        font-size: 20px;
+        line-height: 24px;
+      }
+    }
+  }
+
+  &__characteristics {
+    p {
+      font-size: 13px;
+      line-height: 30px;
+      color: $color-charcoal;
+      margin: 0;
+      margin-bottom: 29px;
+
+      @include vp-768 {
+        font-size: 15px;
+        line-height: 30px;
+      }
+    }
+  }
+
+  &__buy-wrapper {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding-top: 12px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -10px;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 1px;
+      background-color: $color-whisper;
+
+      @include vp-1150 {
+        top: -15px;
+      }
+    }
+
+    span {
+      font-weight: 700;
+      font-size: 15px;
+      line-height: 24px;
+
+      @include vp-768 {
+        font-size: 17px;
+        line-height: 24px;
+      }
+    }
+
+    @include vp-768 {
+      display: flex;
+      margin-top: auto;
+    }
+
+    @include vp-1150 {
+      padding-top: 8px;
+    }
+  }
+
+  &__buy-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: $color-default-black;
+
+    img,
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    svg {
+      fill: $color-whisper;
+      transition: fill $trans-default;
+
+      @include vp-768 {
+        width: 21px;
+        height: 18px;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      & svg {
+        fill: $color-downy;
+      }
+    }
+
+    &:active {
+      svg {
+        fill: rgba($color-downy, 0.3);
+      }
+    }
+
+    @include vp-768 {
+      margin-left: auto;
+    }
+  }
+}

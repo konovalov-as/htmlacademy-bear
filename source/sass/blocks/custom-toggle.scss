@@ -1,24 +1,12 @@
 .custom-toggle {
-  position: relative;
-  font-size: 18px;
-  line-height: 27px;
-  font-weight: 300;
-
   display: flex;
-  width: 500px;
-  padding: 14px 0 10px 36px;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 18px;
 
-  @media screen and (max-width: 767px) {
-    padding: 14px 0 10px 0;
-    width: 100%;
-  }
-
-  &:last-of-type {
-    padding: 14px 0 58px 36px;
-
-    @media screen and (max-width: 767px) {
-      padding: 14px 0 58px 0;
-    }
+  @include vp-768 {
+    font-size: 19px;
+    line-height: 18px;
   }
 
   input {
@@ -32,10 +20,8 @@
   }
 
   label {
-    position: relative;
-
-    padding-left: 52px;
-
+    display: flex;
+    align-items: center;
     cursor: pointer;
 
     span {
@@ -46,79 +32,262 @@
 
   &--checkbox {
     .custom-toggle__icon {
-      position: absolute;
-      top: 0;
-      left: 0;
-
-      width: 28px;
-      height: 28px;
-
-      border: 1.5px solid #2c39f2;
-
-      transition: border 0.3s ease;
+      position: relative;
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      border: 2px solid $color-charcoal;
+      margin-right: 20px;
+      transition: border-color $trans-default, opacity $trans-default;
 
       &::before {
         content: "";
         position: absolute;
         top: 50%;
         left: 50%;
-
-        width: 20px;
-        height: 20px;
-
-        background-color: rgba(#2c39f2, 0);
-
+        width: 22px;
+        height: 16px;
         transform: translate(-50%, -50%);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
 
-        transition: background-color 0.3s ease;
+        @include vp-768 {
+          width: 33px;
+          height: 22px;
+        }
       }
+
+      @include vp-768 {
+        width: 54px;
+        height: 52px;
+      }
+    }
+
+    input:checked + .custom-toggle__icon {
+      &::before {
+        content: "";
+        background-image: url("../../img/svg/tick.svg");
+      }
+    }
+
+    input:disabled + .custom-toggle__icon {
+      opacity: 0.5;
+    }
+
+    input:checked:disabled + .custom-toggle__icon {
+      opacity: 0.5;
+    }
+
+    input:hover + .custom-toggle__icon {
+      border-color: $color-downy-4;
+    }
+
+    input:focus + .custom-toggle__icon {
+      border-color: $color-downy-4;
+    }
+
+    input:active + .custom-toggle__icon {
+      border-color: rgba($color-charcoal, 0.3);
+    }
+
+    input:disabled:hover + .custom-toggle__icon {
+      opacity: 0.5;
+      border-color: $color-charcoal;
+    }
+  }
+
+  &--checkbox-order {
+    font-size: 17px;
+    line-height: 16px;
+    color: $color-charcoal;
+    text-transform: uppercase;
+
+    & label {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    & .custom-toggle__label {
+      position: absolute;
+    }
+
+    .custom-toggle__icon {
+      width: 82px;
+      height: 52px;
+      border: 2px solid rgba($color-charcoal, 0.1);
+      margin-right: 0;
+      transition: border-color $trans-default, color $trans-default;
+
+      @include vp-768 {
+        width: 112px;
+      }
+    }
+
+    input:checked + .custom-toggle__icon {
+      border-color: $color-downy-4;
+
+      &::before {
+        background-image: none;
+      }
+    }
+
+    input:disabled + .custom-toggle__icon {
+      color: rgba($color-charcoal, 0.1);
+      border-color: rgba($color-charcoal, 0.1);
+
+      &::before {
+        background-image: none;
+      }
+    }
+
+    input:checked:disabled + .custom-toggle__icon {
+      color: $color-charcoal;
+      border-color: rgba($color-downy-4, 0.5);
+
+      &::before {
+        background-image: none;
+      }
+    }
+
+    input:hover + .custom-toggle__icon {
+      border-color: rgba($color-charcoal, 0.3);
+
+      &::before {
+        background-image: none;
+      }
+    }
+
+    input:focus + .custom-toggle__icon {
+      border-color: rgba($color-charcoal, 0.3);
+
+      &::before {
+        background-image: none;
+      }
+    }
+
+    input:active + .custom-toggle__icon,
+    input:active ~ .custom-toggle__label {
+      color: rgba($color-charcoal, 0.5);
+      border-color: rgba($color-charcoal, 0.5);
+    }
+
+    input:disabled:hover + .custom-toggle__icon {
+      color: rgba($color-charcoal, 0.1);
+      border-color: rgba($color-charcoal, 0.1);
+    }
+
+    input:checked:hover + .custom-toggle__icon,
+    input:checked:focus + .custom-toggle__icon {
+      border-color: $color-downy-4;
+    }
+
+    input:disabled:active + .custom-toggle__icon,
+    input:disabled:active ~ .custom-toggle__label {
+      color: $color-charcoal;
+      border-color: rgba($color-charcoal, 0.1);
     }
   }
 
   &--radio {
     .custom-toggle__icon {
-      position: absolute;
-      top: 0;
-      left: 0;
-
-      width: 28px;
-      height: 28px;
-
-      border: 1px solid #2c39f2;
+      position: relative;
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      border: 2px solid $color-charcoal;
       border-radius: 50%;
-
-      transition: border 0.3s ease;
+      margin-right: 20px;
+      transition: border-color $trans-default;
 
       &::before {
         content: "";
         position: absolute;
         top: 50%;
         left: 50%;
-
-        width: 20px;
-        height: 20px;
-
-        color: rgba(255, 255, 255, 0);
-
+        width: 16px;
+        height: 16px;
+        color: $color-default-white;
+        background-color: $color-default-white;
         border-radius: 50%;
         transform: translate(-50%, -50%);
+        transition: background-color $trans-default;
 
-        transition: color 0.3s ease;
+        @include vp-768 {
+          width: 20px;
+          height: 20px;
+        }
+      }
+
+      @include vp-768 {
+        width: 54px;
+        height: 52px;
+        margin-right: 27px;
       }
     }
-  }
 
-  input:checked + .custom-toggle__icon {
-    border: 1.5px solid #2c39f2;
+    input:checked + .custom-toggle__icon {
+      border-color: $color-charcoal;
 
-    &::before {
-      background-color: #2c39f2;
+      &::before {
+        background-color: $color-downy-4;
+      }
+    }
+
+    input:disabled + .custom-toggle__icon {
+      border-color: rgba($color-charcoal, 0.5);
+    }
+
+    input:checked:disabled + .custom-toggle__icon {
+      border-color: rgba($color-charcoal, 0.5);
+
+      &::before {
+        background-color: rgba($color-downy-4, 0.5);
+      }
+    }
+
+    input:hover + .custom-toggle__icon {
+      border-color: $color-downy-4;
+    }
+
+    input:focus + .custom-toggle__icon {
+      border-color: $color-downy-4;
+    }
+
+    input:active + .custom-toggle__icon {
+      border-color: rgba($color-charcoal, 0.3);
+
+      &::before {
+        background-color: rgba($color-downy-4, 0.3);
+      }
+    }
+
+    input:disabled:hover + .custom-toggle__icon {
+      border-color: rgba($color-charcoal, 0.5);
+    }
+
+    input:disabled:active + .custom-toggle__icon {
+      border-color: rgba($color-charcoal, 0.5);
+
+      &::before {
+        background-color: $color-default-white;
+      }
+    }
+
+    input:checked:disabled:active + .custom-toggle__icon {
+      border-color: rgba($color-charcoal, 0.5);
+
+      &::before {
+        background-color: rgba($color-downy-4, 0.5);
+      }
     }
   }
 
   &.is-invalid {
     label span {
-      color: #ff1553;
+      color: $color-torch-red;
     }
   }
 
@@ -128,11 +297,11 @@
     bottom: -5px;
 
     &.is-invalid {
-      color: #ff0000;
+      color: $color-default-red;
     }
 
     &.is-valid {
-      color: #15ab07;
+      color: color-islamic-green;
     }
   }
 }

@@ -1,0 +1,83 @@
+mixin sale()
+  -
+    const saleProducts = [
+      {
+        textLabel: "Распродажа",
+        styleLabel: "product-card__label--sale",
+        desktopWebpImg: "img/content/photo-dragon-2-desktop@1x.webp 1x, img/content/photo-dragon-2-desktop@2x.webp 2x",
+        tabletWebpImg: "img/content/photo-dragon-2-tablet@1x.webp 1x, img/content/photo-dragon-2-tablet@2x.webp 2x",
+        mobileWebpImg: "img/content/photo-dragon-2-mobile@1x.webp 1x, img/content/photo-dragon-2-mobile@2x.webp 2x",
+        desktopImg: "img/content/photo-dragon-2-desktop@1x.jpg 1x, img/content/photo-dragon-2-desktop@2x.jpg 2x",
+        tabletImg: "img/content/photo-dragon-2-tablet@1x.jpg 1x, img/content/photo-dragon-2-tablet@2x.jpg 2x",
+        mobileImg: "img/content/photo-dragon-2-mobile@1x.jpg",
+        mobileRetinaImg: "img/content/photo-dragon-2-mobile@2x.jpg 2x",
+        widthImg: 260,
+        heightImg: 195,
+        altText: "Дракон",
+        productTitle: "Дракон. Пижамница",
+        productCharacteristics: "Длина от носа до хвоста 60-63 см см",
+        productPrice: "1 900 ₽",
+      },
+      {
+        textLabel: "Распродажа",
+        styleLabel: "product-card__label--sale",
+        desktopWebpImg: "img/content/photo-kitty-desktop@1x.webp 1x, img/content/photo-kitty-desktop@2x.webp 2x",
+        tabletWebpImg: "img/content/photo-kitty-tablet@1x.webp 1x, img/content/photo-kitty-tablet@2x.webp 2x",
+        mobileWebpImg: "img/content/photo-kitty-mobile@1x.webp 1x, img/content/photo-kitty-mobile@2x.webp 2x",
+        desktopImg: "img/content/photo-kitty-desktop@1x.jpg 1x, img/content/photo-kitty-desktop@2x.jpg 2x",
+        tabletImg: "img/content/photo-kitty-tablet@1x.jpg 1x, img/content/photo-kitty-tablet@2x.jpg 2x",
+        mobileImg: "img/content/photo-kitty-mobile@1x.jpg",
+        mobileRetinaImg: "img/content/photo-kitty-mobile@2x.jpg 2x",
+        widthImg: 260,
+        heightImg: 195,
+        altText: "Котёнок Рыжик",
+        productTitle: "Котёнок Рыжик",
+        productCharacteristics: "Высота примерно 26 см",
+        productPrice: "1 900 ₽",
+      },
+      {
+        textLabel: "Распродажа",
+        styleLabel: "product-card__label--sale",
+        desktopWebpImg: "img/content/photo-parrot-desktop@1x.webp 1x, img/content/photo-parrot-desktop@2x.webp 2x",
+        tabletWebpImg: "img/content/photo-parrot-tablet@1x.webp 1x, img/content/photo-parrot-tablet@2x.webp 2x",
+        mobileWebpImg: "img/content/photo-parrot-mobile@1x.webp 1x, img/content/photo-parrot-mobile@2x.webp 2x",
+        desktopImg: "img/content/photo-parrot-desktop@1x.jpg 1x, img/content/photo-parrot-desktop@2x.jpg 2x",
+        tabletImg: "img/content/photo-parrot-tablet@1x.jpg 1x, img/content/photo-parrot-tablet@2x.jpg 2x",
+        mobileImg: "img/content/photo-parrot-mobile@1x.jpg",
+        mobileRetinaImg: "img/content/photo-parrot-mobile@2x.jpg 2x",
+        widthImg: 260,
+        heightImg: 195,
+        altText: "Попугай. Вязаная игрушка",
+        productTitle: "Попугай. Вязаная игрушка",
+        productCharacteristics: "Рост 25 см, вес 350 г",
+        productPrice: "2 200 ₽",
+      },
+      {
+        textLabel: "Новинка",
+        styleLabel: "product-card__label--sale",
+        desktopWebpImg: "img/content/photo-unicom-desktop@1x.webp 1x, img/content/photo-unicom-desktop@2x.webp 2x",
+        tabletWebpImg: "img/content/photo-unicom-tablet@1x.webp 1x, img/content/photo-unicom-tablet@2x.webp 2x",
+        mobileWebpImg: "img/content/photo-unicom-mobile@1x.webp 1x, img/content/photo-unicom-mobile@2x.webp 2x",
+        desktopImg: "img/content/photo-unicom-desktop@1x.jpg 1x, img/content/photo-unicom-desktop@2x.jpg 2x",
+        tabletImg: "img/content/photo-unicom-tablet@1x.jpg 1x, img/content/photo-unicom-tablet@2x.jpg 2x",
+        mobileImg: "img/content/photo-unicom-mobile@1x.jpg",
+        mobileRetinaImg: "img/content/photo-unicom-mobile@2x.jpg 2x",
+        widthImg: 260,
+        heightImg: 195,
+        altText: "Оранжевая единорожка",
+        productTitle: "Единорожка",
+        productCharacteristics: "Рост 13 см, вес 250 г",
+        productPrice: "900 ₽",
+      },
+    ]
+
+  section.goods
+    .container
+      .goods__wrapper
+        .title-h2.goods__title
+          h2 Приятная распродажа
+        ul.goods__list
+          each oneProduct in saleProducts
+            +product-card({
+              oneProduct: oneProduct
+            }).goods__item

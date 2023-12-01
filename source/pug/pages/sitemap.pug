@@ -1,7 +1,8 @@
 extends ../components/base/layout
 
 block variables
-  - const title = "Список страниц"
+  include ../variables
+  - const title = "Список страниц - HTML Academy: Мишка"
 
 block main
   style
@@ -17,12 +18,57 @@ block main
         name: "Главная — index.html",
         src: "index.html"
       },
+      {
+        name: "Каталог — catalog.html",
+        src: "catalog.html"
+      },
+      {
+        name: "Вязание на заказ — order.html",
+        src: "order.html"
+      },
+      {
+        name: "Страница товара — product.html",
+        src: "product.html"
+      },
+      {
+        name: "Поиск — search.html",
+        src: "search.html"
+      },
+      {
+        name: "Результаты поиска — search-results.html",
+        src: "search-results.html"
+      },
+      {
+        name: "Корзина — cart.html",
+        src: "cart.html"
+      },
+      {
+        name: "Новые поступления — new-goods.html",
+        src: "new-goods.html"
+      },
+      {
+        name: "Распродажа — sale.html",
+        src: "sale.html"
+      },
+      {
+        name: "Бесплатная доставка по России — free-delivery.html",
+        src: "free-delivery.html"
+      },
+      {
+        name: "Страница не найдена — 404.html",
+        src: "404.html"
+      },
+      {
+        name: "Ошибка на сервере — 500.html",
+        src: "500.html"
+      },
     ]
 
   main
     .sitemap
       .container
-        img(src="https://via.placeholder.com/300x150", width="300", alt="Логотип проекта")
+        +logo()
+        //- img(src="https://via.placeholder.com/300x150", width="300", alt="Логотип проекта")
         h1 Список страниц
         ol
           each page in pages
