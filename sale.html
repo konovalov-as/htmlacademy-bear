@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>Распродажа - HTML Academy: Мишка</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="HTML Academy: Мишка — описание">
+    <link rel="preload" fetchpriority="high" as="image" href="/img/content/hero-mobile@1x.webp" type="image/webp">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="css/style.min.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="container">
+          <div class="header__wrapper"><a class="header__logo" href="index.html" aria-label="Переход на главную">
+              <picture>
+                <source media="(min-width: 1150px)" srcset="img/svg/logo/logo-desktop.svg">
+                <source media="(min-width: 768px)" srcset="img/svg/logo/logo-tablet.svg"><img src="img/svg/logo/logo-mobile.svg" alt="Интернет-магазин «Мишка»" width="86" height="35" loading="lazy">
+              </picture></a>
+            <button class="header__toggle" type="button" aria-label="Переключатель отображения меню" aria-pressed="false" data-nav-toggle><span class="header__toggle header__toggle--open">
+                <svg width="20" height="20" aria-hidden="true">
+                  <use xlink:href="img/sprite.svg#icon-menu-open"></use>
+                </svg></span><span class="header__toggle header__toggle--close">
+                <svg width="20" height="20" aria-hidden="true">
+                  <use xlink:href="img/sprite.svg#icon-menu-close"></use>
+                </svg></span></button>
+            <nav class="header__nav main-nav" data-main-nav>
+              <ul class="main-nav__list">
+                <li class="main-nav__item main-nav__item--catalog"><a class="main-nav__link" href="catalog.html"><span class="main-nav__text">Каталог товаров</span></a></li>
+                <li class="main-nav__item main-nav__item--order"><a class="main-nav__link" href="order.html"><span class="main-nav__text">Вязание на заказ</span></a></li>
+                <li class="main-nav__item main-nav__item--search"><a class="main-nav__link main-nav__link--icon" href="search.html">
+                    <svg width="18" height="18" aria-hidden="true">
+                      <use xlink:href="img/sprite.svg#icon-search"></use>
+                    </svg><span class="main-nav__text">Поиск по сайту</span></a></li>
+                <li class="main-nav__item main-nav__item--cart"><a class="main-nav__link main-nav__link--icon" href="cart.html">
+                    <svg width="21" height="21" aria-hidden="true">
+                      <use xlink:href="img/sprite.svg#icon-cart"></use>
+                    </svg><span class="main-nav__text">Корзина: пока пуста</span></a></li>
+                <li class="main-nav__item main-nav__item--goods"><a class="main-nav__link" href="new-goods.html"><span class="main-nav__text">Новые поступления</span></a></li>
+                <li class="main-nav__item main-nav__item--sale"><a class="main-nav__link" href="sale.html"><span class="main-nav__text">Распродажа</span></a></li>
+                <li class="main-nav__item main-nav__item--delivery"><a class="main-nav__link" href="free-delivery.html"><span class="main-nav__text">Бесплатная доставка по России</span></a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </header>
+      <main class="main">
+        <section class="page-title">
+          <div class="container">
+            <div class="title-h1 page-title__text">
+              <h1>Распродажа</h1>
+            </div>
+          </div>
+        </section>
+        <section class="goods">
+          <div class="container">
+            <div class="goods__wrapper">
+              <div class="title-h2 goods__title">
+                <h2>Приятная распродажа</h2>
+              </div>
+              <ul class="goods__list">
+                <li class="product-card goods__item">
+                  <div class="product-card__wrapper"><a class="product-card__picture-link" href="more-details.html">
+                      <div class="product-card__label product-card__label--sale"><span>Распродажа</span></div>
+                      <div class="product-card__picture">
+                        <picture>
+                          <source type="image/webp" media="(min-width: 1150px)" srcset="img/content/photo-dragon-2-desktop@1x.webp 1x, img/content/photo-dragon-2-desktop@2x.webp 2x">
+                          <source type="image/webp" media="(min-width: 768px)" srcset="img/content/photo-dragon-2-tablet@1x.webp 1x, img/content/photo-dragon-2-tablet@2x.webp 2x">
+                          <source type="image/webp" srcset="img/content/photo-dragon-2-mobile@1x.webp 1x, img/content/photo-dragon-2-mobile@2x.webp 2x">
+                          <source media="(min-width: 1150px)" srcset="img/content/photo-dragon-2-desktop@1x.jpg 1x, img/content/photo-dragon-2-desktop@2x.jpg 2x">
+                          <source media="(min-width: 768px)" srcset="img/content/photo-dragon-2-tablet@1x.jpg 1x, img/content/photo-dragon-2-tablet@2x.jpg 2x"><img src="img/content/photo-dragon-2-mobile@1x.jpg" srcset="img/content/photo-dragon-2-mobile@2x.jpg 2x" alt="Дракон" width="260" height="195" loading="lazy">
+                        </picture>
+                      </div></a>
+                    <div class="product-card__description">
+                      <div class="title-h3 product-card__title"><a href="more-details.html">
+                          <h3>Дракон. Пижамница</h3></a></div>
+                      <div class="product-card__characteristics">
+                        <p>Длина от носа до хвоста 60-63 см см</p>
+                      </div>
+                      <div class="product-card__buy-wrapper"><span>1 900 ₽</span><a class="product-card__buy-link" href="add-to-cart.html" aria-label="Добавить в корзину" data-open-modal="make-order-success">
+                          <svg width="18" height="18" aria-hidden="true">
+                            <use xlink:href="img/sprite.svg#icon-cart"></use>
+                          </svg></a></div>
+                    </div>
+                  </div>
+                </li>
+                <li class="product-card goods__item">
+                  <div class="product-card__wrapper"><a class="product-card__picture-link" href="more-details.html">
+                      <div class="product-card__label product-card__label--sale"><span>Распродажа</span></div>
+                      <div class="product-card__picture">
+                        <picture>
+                          <source type="image/webp" media="(min-width: 1150px)" srcset="img/content/photo-kitty-desktop@1x.webp 1x, img/content/photo-kitty-desktop@2x.webp 2x">
+                          <source type="image/webp" media="(min-width: 768px)" srcset="img/content/photo-kitty-tablet@1x.webp 1x, img/content/photo-kitty-tablet@2x.webp 2x">
+                          <source type="image/webp" srcset="img/content/photo-kitty-mobile@1x.webp 1x, img/content/photo-kitty-mobile@2x.webp 2x">
+                          <source media="(min-width: 1150px)" srcset="img/content/photo-kitty-desktop@1x.jpg 1x, img/content/photo-kitty-desktop@2x.jpg 2x">
+                          <source media="(min-width: 768px)" srcset="img/content/photo-kitty-tablet@1x.jpg 1x, img/content/photo-kitty-tablet@2x.jpg 2x"><img src="img/content/photo-kitty-mobile@1x.jpg" srcset="img/content/photo-kitty-mobile@2x.jpg 2x" alt="Котёнок Рыжик" width="260" height="195" loading="lazy">
+                        </picture>
+                      </div></a>
+                    <div class="product-card__description">
+                      <div class="title-h3 product-card__title"><a href="more-details.html">
+                          <h3>Котёнок Рыжик</h3></a></div>
+                      <div class="product-card__characteristics">
+                        <p>Высота примерно 26 см</p>
+                      </div>
+                      <div class="product-card__buy-wrapper"><span>1 900 ₽</span><a class="product-card__buy-link" href="add-to-cart.html" aria-label="Добавить в корзину" data-open-modal="make-order-success">
+                          <svg width="18" height="18" aria-hidden="true">
+                            <use xlink:href="img/sprite.svg#icon-cart"></use>
+                          </svg></a></div>
+                    </div>
+                  </div>
+                </li>
+                <li class="product-card goods__item">
+                  <div class="product-card__wrapper"><a class="product-card__picture-link" href="more-details.html">
+                      <div class="product-card__label product-card__label--sale"><span>Распродажа</span></div>
+                      <div class="product-card__picture">
+                        <picture>
+                          <source type="image/webp" media="(min-width: 1150px)" srcset="img/content/photo-parrot-desktop@1x.webp 1x, img/content/photo-parrot-desktop@2x.webp 2x">
+                          <source type="image/webp" media="(min-width: 768px)" srcset="img/content/photo-parrot-tablet@1x.webp 1x, img/content/photo-parrot-tablet@2x.webp 2x">
+                          <source type="image/webp" srcset="img/content/photo-parrot-mobile@1x.webp 1x, img/content/photo-parrot-mobile@2x.webp 2x">
+                          <source media="(min-width: 1150px)" srcset="img/content/photo-parrot-desktop@1x.jpg 1x, img/content/photo-parrot-desktop@2x.jpg 2x">
+                          <source media="(min-width: 768px)" srcset="img/content/photo-parrot-tablet@1x.jpg 1x, img/content/photo-parrot-tablet@2x.jpg 2x"><img src="img/content/photo-parrot-mobile@1x.jpg" srcset="img/content/photo-parrot-mobile@2x.jpg 2x" alt="Попугай. Вязаная игрушка" width="260" height="195" loading="lazy">
+                        </picture>
+                      </div></a>
+                    <div class="product-card__description">
+                      <div class="title-h3 product-card__title"><a href="more-details.html">
+                          <h3>Попугай. Вязаная игрушка</h3></a></div>
+                      <div class="product-card__characteristics">
+                        <p>Рост 25 см, вес 350 г</p>
+                      </div>
+                      <div class="product-card__buy-wrapper"><span>2 200 ₽</span><a class="product-card__buy-link" href="add-to-cart.html" aria-label="Добавить в корзину" data-open-modal="make-order-success">
+                          <svg width="18" height="18" aria-hidden="true">
+                            <use xlink:href="img/sprite.svg#icon-cart"></use>
+                          </svg></a></div>
+                    </div>
+                  </div>
+                </li>
+                <li class="product-card goods__item">
+                  <div class="product-card__wrapper"><a class="product-card__picture-link" href="more-details.html">
+                      <div class="product-card__label product-card__label--sale"><span>Новинка</span></div>
+                      <div class="product-card__picture">
+                        <picture>
+                          <source type="image/webp" media="(min-width: 1150px)" srcset="img/content/photo-unicom-desktop@1x.webp 1x, img/content/photo-unicom-desktop@2x.webp 2x">
+                          <source type="image/webp" media="(min-width: 768px)" srcset="img/content/photo-unicom-tablet@1x.webp 1x, img/content/photo-unicom-tablet@2x.webp 2x">
+                          <source type="image/webp" srcset="img/content/photo-unicom-mobile@1x.webp 1x, img/content/photo-unicom-mobile@2x.webp 2x">
+                          <source media="(min-width: 1150px)" srcset="img/content/photo-unicom-desktop@1x.jpg 1x, img/content/photo-unicom-desktop@2x.jpg 2x">
+                          <source media="(min-width: 768px)" srcset="img/content/photo-unicom-tablet@1x.jpg 1x, img/content/photo-unicom-tablet@2x.jpg 2x"><img src="img/content/photo-unicom-mobile@1x.jpg" srcset="img/content/photo-unicom-mobile@2x.jpg 2x" alt="Оранжевая единорожка" width="260" height="195" loading="lazy">
+                        </picture>
+                      </div></a>
+                    <div class="product-card__description">
+                      <div class="title-h3 product-card__title"><a href="more-details.html">
+                          <h3>Единорожка</h3></a></div>
+                      <div class="product-card__characteristics">
+                        <p>Рост 13 см, вес 250 г</p>
+                      </div>
+                      <div class="product-card__buy-wrapper"><span>900 ₽</span><a class="product-card__buy-link" href="add-to-cart.html" aria-label="Добавить в корзину" data-open-modal="make-order-success">
+                          <svg width="18" height="18" aria-hidden="true">
+                            <use xlink:href="img/sprite.svg#icon-cart"></use>
+                          </svg></a></div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <div class="container">
+          <div class="footer__wrapper"><a class="footer__logo" href="index.html" aria-label="Переход на главную">
+              <svg width="102" height="34" aria-hidden="true">
+                <use xlink:href="img/sprite.svg#icon-logo-footer"></use>
+              </svg></a>
+            <div class="footer__social social">
+              <ul class="social__list">
+                <li class="social__item"><a class="social__link social__link--insta" href="https://www.instagram.com/mimimishkashop" target="_blank" aria-label="Мы в Instagram">
+                    <svg width="22" height="21" aria-hidden="true">
+                      <use xlink:href="img/sprite.svg#icon-insta"></use>
+                    </svg></a></li>
+                <li class="social__item"><a class="social__link social__link--fb" href="https://www.facebook.com/mimimishkashop" target="_blank" aria-label="Мы в Facebook">
+                    <svg width="15" height="28" aria-hidden="true">
+                      <use xlink:href="img/sprite.svg#icon-fb"></use>
+                    </svg></a></li>
+                <li class="social__item"><a class="social__link social__link--twitter" href="https://twitter.com/mimimishkashop" target="_blank" aria-label="Мы в Twitter">
+                    <svg width="23" height="20" aria-hidden="true">
+                      <use xlink:href="img/sprite.svg#icon-twitter"></use>
+                    </svg></a></li>
+              </ul>
+            </div>
+            <div class="footer__copyright copyright"><a class="copyright__link" href="https://htmlacademy.ru/intensive/adaptive" target="_blank" aria-label="HTML Academy">
+                <p class="copyright__text">Разработано</p>
+                <svg width="27" height="34" aria-hidden="true">
+                  <use xlink:href="img/sprite.svg#icon-htmlacademy"></use>
+                </svg></a></div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <section class="modal modal--preload" data-modal="make-order-success">
+      <div class="modal__wrapper">
+        <div class="modal__overlay" data-close-modal></div>
+        <div class="modal__content order">
+          <div class="title-h2 order__title">
+            <h2>Товар добавлен в корзину</h2>
+          </div>
+          <button class="order__submit" type="button" data-close-modal data-focus>Ок</button>
+        </div>
+      </div>
+    </section>
+    <script src="js/vendor.min.js" defer></script>
+    <script src="js/main.min.js" defer></script>
+  </body>
+</html>

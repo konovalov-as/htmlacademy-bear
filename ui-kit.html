@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <title>UI-kit</title>
+    <title>UI-kit - HTML Academy: Мишка</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="ProjectName — описание">
+    <meta name="description" content="HTML Academy: Мишка — описание">
+    <link rel="preload" fetchpriority="high" as="image" href="/img/content/hero-mobile@1x.webp" type="image/webp">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="css/style.min.css">
   </head>
   <body>
@@ -33,30 +41,30 @@
   font-size: 16px;
   line-height: 22px;
 }
-.uikit__h1 {
+.uikit h1 {
   font-size: 30px;
   line-height: 36px;
   margin: 30px 0 30px;
 }
 @media (max-width: 767px) {
-  .uikit__h1 {
+  .uikit h1 {
     font-size: 24px;
     line-height: 30px;
   }
 }
-.uikit__h2 {
+.uikit h2 {
   font-size: 20px;
   line-height: 26px;
   position: relative;
   margin: 0;
   padding: 5px 0;
 }
-.uikit__section > .uikit__h2 {
+.uikit section > h2 {
   margin: 0 0 15px 0;
   padding: 50px 0 0 0;
 }
 @media (max-width: 767px) {
-  .uikit__section > .uikit__h2 {
+  .uikit section > h2 {
     padding: 30px 0 0;
   }
 }
@@ -207,7 +215,7 @@ code[class*=language-],pre[class*=language-]{color:#000;background:0 0;text-shad
       </style>
       <main>
         <div class="uikit">
-          <div class="uikit__sections" data-scroll-lock-fill-gap>
+          <div class="uikit__sections">
             <label for="section-burger"><span>Разделы&nbsp;компонентов</span></label>
             <input class="visually-hidden" type="checkbox" checked id="section-burger">
             <div>
@@ -215,40 +223,56 @@ code[class*=language-],pre[class*=language-]{color:#000;background:0 0;text-shad
                 <li><a href="#modals">Модальные окна</a></li>
                 <li><a href="#buttons">Кнопки</a></li>
                 <li><a href="#forms">Элементы форм</a></li>
+                <li><a href="#goods">Карточка товара</a></li>
+                <li><a href="#product-preview">Предпросмотор товара</a></li>
               </ul>
             </div>
           </div>
-          <div class="container"><a class="uikit__header-link" href="sitemap.html"><img src="https://via.placeholder.com/300x150" width="300" alt="Логотип проекта"></a>
-            <h1 class="uikit__h1">Компоненты, используемые на проекте</h1>
-            <section class="uikit__section">
-              <h2 class="uikit__h2">Название компонента или группы компонентов</h2>
+          <div class="container"><a class="uikit__header-link" href="sitemap.html">
+              <picture>
+                <source media="(min-width: 1150px)" srcset="img/svg/logo/logo-desktop.svg">
+                <source media="(min-width: 768px)" srcset="img/svg/logo/logo-tablet.svg"><img src="img/svg/logo/logo-mobile.svg" alt="Интернет-магазин «Мишка»" width="86" height="35" loading="lazy">
+              </picture></a>
+            <h1>Компоненты, используемые на проекте</h1>
+            <section>
+              <h2>Название компонента или группы компонентов</h2>
               <p class="uikit__text">Информация о компоненте (подсказки \ предупреждение \ важная информация)</p>
-              <div class="uikit__component">
-                <p class="uikit__text"> Класс компонента \ модификаторы</p>
-                <pre><code class="language-pug">p Пример кода
+              <p class="uikit__text"> Класс компонента \ модификаторы</p>
+              <pre><code class="language-pug">p Пример кода
 </code></pre>
-              </div>
             </section>
-            <section class="uikit__section" id="modals">
-              <h2 class="uikit__h2">Модальные окна</h2>
+            <section id="modals">
+              <h2>Модальные окна</h2>
               <div class="uikit__component">
-                <p class="uikit__text uikit__text--class">.modal \ .modal--feedback</p>
+                <p class="uikit__text uikit__text--class">.modal</p>
                 <button class="btn" type="button" data-open-modal="feedback">modal-feedback</button>
                 <pre><code class="language-pug">+btn({text: "modal-feedback"})(data-open-modal="feedback")</code></pre>
               </div>
               <div class="uikit__component">
-                <p class="uikit__text uikit__text--class">.modal \ .modal--success</p>
-                <button class="btn" type="button" data-open-modal="success">modal-success</button>
-                <pre><code class="language-pug">+btn({text: "modal-success"})(data-open-modal="success")
+                <p class="uikit__text uikit__text--class">.modal</p>
+                <button class="btn" type="button" data-open-modal="make-order-success">make-order-success</button>
+                <pre><code class="language-pug">+btn({text: "make-order-success"})(data-open-modal="make-order-success")
+</code></pre>
+              </div>
+              <div class="uikit__component">
+                <p class="uikit__text uikit__text--class">.modal</p>
+                <button class="btn" type="button" data-open-modal="make-order">make-order</button>
+                <pre><code class="language-pug">+btn({text: "make-order"})(data-open-modal="make-order")
+</code></pre>
+              </div>
+              <div class="uikit__component">
+                <p class="uikit__text uikit__text--class">.modal</p>
+                <button class="btn" type="button" data-open-modal="send-order">send-order</button>
+                <pre><code class="language-pug">+btn({text: "send-order"})(data-open-modal="send-order")
 </code></pre>
               </div>
             </section>
-            <section class="uikit__section" id="buttons">
-              <h2 class="uikit__h2">Кнопки</h2>
+            <section id="buttons">
+              <h2>Кнопки</h2>
               <div class="uikit__component">
                 <p class="uikit__text uikit__text--class">.btn \ default \ button</p>
                 <button class="btn" type="button">Кнопка</button>
-                <pre><code class="language-pug">+btn({text: "Текст", href: "#"})</code></pre>
+                <pre><code class="language-pug">+btn({text: "Кнопка"})</code></pre>
               </div>
               <div class="uikit__component">
                 <p class="uikit__text uikit__text--class">.btn \ .btn--red \ link</p>
@@ -262,8 +286,8 @@ code[class*=language-],pre[class*=language-]{color:#000;background:0 0;text-shad
 </code></pre>
               </div>
             </section>
-            <section class="uikit__section" id="forms">
-              <h2 class="uikit__h2">Элементы форм</h2>
+            <section id="forms">
+              <h2>Элементы форм</h2>
               <div class="uikit__component">
                 <p class="uikit__text uikit__text--class">.custom-input \ type="text"</p>
                 <div class="custom-input">
@@ -326,7 +350,22 @@ code[class*=language-],pre[class*=language-]{color:#000;background:0 0;text-shad
   inputName: "user-agreement",
   inputValue: "user-agreement-1",
   inputChecked: false
-}).custom-toggle--checkbox
+}).custom-toggle--checkbox</code></pre>
+              </div>
+              <div class="uikit__component">
+                <p class="uikit__text uikit__text--class">+custom-toggle \ default</p>
+                <div class="custom-toggle custom-toggle--radio">
+                  <label>
+                    <input type="radio" value="user-agreement-1" name="user-agreement"><span class="custom-toggle__icon"></span><span class="custom-toggle__label">Чекбокс</span>
+                  </label>
+                </div>
+                <pre><code class="language-pug">+custom-toggle({
+  inputType: "radio",
+  inputLabel: "Чекбокс",
+  inputName: "user-agreement",
+  inputValue: "user-agreement-1",
+  inputChecked: false
+}).custom-toggle--radio
 
 </code></pre>
               </div>
@@ -349,6 +388,65 @@ code[class*=language-],pre[class*=language-]{color:#000;background:0 0;text-shad
   error: "Выберите тему обращения",
   optionsList: [{text: "Тема 1", value: "id-1"}, {text: "Тема 2", value: "id-2"}, {text: "Тема 3", value: "id-3"}, {text: "Тема 4", value: "id-4"}, {text: "Тема 5", value: "id-5"}, {text: "Тема 6", value: "id-6"}]
 })(data-select, data-validate-type="select", data-name="some-name", data-id="id-example-1").custom-select
+</code></pre>
+              </div>
+            </section>
+            <section id="goods">
+              <h2>Карточка товара</h2>
+              <div class="uikit__component">
+                <p class="uikit__text">li.product-card</p>
+                <ul class="goods">
+                  <li class="product-card goods__item">
+                    <div class="product-card__wrapper"><a class="product-card__picture-link" href="more-details.html">
+                        <div class="product-card__picture">
+                          <picture>
+                            <source type="image/webp" media="(min-width: 1150px)" srcset="img/content/photo-hare-desktop@1x.webp 1x, img/content/photo-hare-desktop@2x.webp 2x">
+                            <source type="image/webp" media="(min-width: 768px)" srcset="img/content/photo-hare-tablet@1x.webp 1x, img/content/photo-hare-tablet@2x.webp 2x">
+                            <source type="image/webp" srcset="img/content/photo-hare-mobile@1x.webp 1x, img/content/photo-hare-mobile@2x.webp 2x">
+                            <source media="(min-width: 1150px)" srcset="img/content/photo-hare-desktop@1x.jpg 1x, img/content/photo-hare-desktop@2x.jpg 2x">
+                            <source media="(min-width: 768px)" srcset="img/content/photo-hare-tablet@1x.jpg 1x, img/content/photo-hare-tablet@2x.jpg 2x"><img src="img/content/photo-hare-mobile@1x.jpg" srcset="img/content/photo-hare-mobile@2x.jpg 2x" alt="Зайчик-попрыгайчик" width="260" height="195" loading="lazy">
+                          </picture>
+                        </div></a>
+                      <div class="product-card__description">
+                        <div class="title-h3 product-card__title"><a href="more-details.html">
+                            <h3>Зайчик-попрыгайчик</h3></a></div>
+                        <div class="product-card__characteristics">
+                          <p>Рост 30 см, вес 200 г</p>
+                        </div>
+                        <div class="product-card__buy-wrapper"><span>1 200 ₽</span><a class="product-card__buy-link" href="add-to-cart.html" aria-label="Добавить в корзину" data-open-modal="make-order-success">
+                            <svg width="18" height="18" aria-hidden="true">
+                              <use xlink:href="img/sprite.svg#icon-cart"></use>
+                            </svg></a></div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <pre><code class="language-pug">+product-card({
+    oneProduct,
+  }).goods__item
+</code></pre>
+              </div>
+            </section>
+            <section id="product-preview">
+              <h2>Карточка предпросмотра товара</h2>
+              <div class="uikit__component">
+                <p class="uikit__text">.product-preview</p>
+                <div class="product-preview">
+                  <div class="product-preview__picture">
+                    <picture>
+                      <source type="image/webp" srcset="img/content/triple-set-preview@1x.webp 1x, img/content/triple-set-preview@2x.webp 2x"><img src="img/content/triple-set-preview@1x.jpg" srcset="img/content/triple-set-preview@2x.jpg 2x" alt="Вязаная корзинка" width="92" height="92" loading="lazy">
+                    </picture>
+                  </div>
+                  <div class="product-preview__wrapper">
+                    <div class="title-h3 product-preview__title">
+                      <h3>Корзинка вязанная</h3>
+                    </div>
+                    <div class="product-preview__text"><span>Экологически чистая пряжа, ручная работа</span></div><span class="product-preview__order">Заказать</span>
+                  </div>
+                </div>
+                <pre><code class="language-pug">+product-preview({
+  oneProduct: onePreviewProduct
+})
 
 </code></pre>
               </div>
@@ -367,33 +465,107 @@ Prism.languages.javascript=Prism.languages.extend("clike",{"class-name":[Prism.l
 
       </script>
     </div>
-    <div class="modal modal--preload modal--feedback" data-modal="feedback">
+    <section class="modal modal--preload" data-modal="make-order">
       <div class="modal__wrapper">
         <div class="modal__overlay" data-close-modal></div>
-        <div class="modal__content">
-          <p class="modal__description">Обычная модалка</p>
-          <button class="modal__close-btn" type="button" aria-label="Закрыть попап" data-close-modal>
-            <svg width="15" height="15" aria-hidden="true">
-              <use xlink:href="img/sprite.svg#icon-close"></use>
-            </svg>
-          </button>
+        <div class="modal__content order">
+          <div class="title-h2 order__title">
+            <h2>Добавить в&nbsp;корзину</h2>
+          </div>
+          <form class="order__form" action="https://echo.htmlacademy.ru" method="post">
+            <p>Выберите размер:</p>
+            <ul>
+              <li>
+                <div class="custom-toggle custom-toggle--checkbox custom-toggle--checkbox-order">
+                  <label>
+                    <input type="checkbox" value="size-s" name="size-s" checked><span class="custom-toggle__icon"></span><span class="custom-toggle__label">s</span>
+                  </label>
+                </div>
+              </li>
+              <li>
+                <div class="custom-toggle custom-toggle--checkbox custom-toggle--checkbox-order">
+                  <label>
+                    <input type="checkbox" value="size-m" name="size-m"><span class="custom-toggle__icon"></span><span class="custom-toggle__label">m</span>
+                  </label>
+                </div>
+              </li>
+              <li>
+                <div class="custom-toggle custom-toggle--checkbox custom-toggle--checkbox-order">
+                  <label>
+                    <input type="checkbox" value="size-l" name="size-l"><span class="custom-toggle__icon"></span><span class="custom-toggle__label">l</span>
+                  </label>
+                </div>
+              </li>
+            </ul>
+            <button class="order__submit" type="submit" data-open-modal="make-order-success">Добавить</button>
+          </form>
         </div>
       </div>
-    </div>
-    <div class="modal modal--preload modal--success modal--no-scale modal--fit-content" data-modal="success">
+    </section>
+    <section class="modal modal--preload" data-modal="make-order-success">
       <div class="modal__wrapper">
         <div class="modal__overlay" data-close-modal></div>
-        <div class="modal__content">
-          <p class="modal__description">Размер этой модалки зависит от ширины контента,<br>отключена анимация-скейл</p>
-          <button class="modal__close-btn" type="button" aria-label="Закрыть попап" data-close-modal>
-            <svg width="15" height="15" aria-hidden="true">
-              <use xlink:href="img/sprite.svg#icon-close"></use>
-            </svg>
-          </button>
+        <div class="modal__content order">
+          <div class="title-h2 order__title">
+            <h2>Товар добавлен в корзину</h2>
+          </div>
+          <button class="order__submit" type="button" data-close-modal data-focus>Ок</button>
         </div>
       </div>
-    </div>
-    <script src="js/vendor.min.js"></script>
-    <script src="js/main.min.js"></script>
+    </section>
+    <section class="modal modal--preload" data-modal="feedback">
+      <div class="modal__wrapper">
+        <div class="modal__overlay" data-close-modal></div>
+        <div class="modal__content feedback">
+          <div class="title-h2 feedback__title">
+            <h2>Напишите нам</h2>
+          </div>
+          <div class="feedback__wrapper" data-form-validate data-callback="base">
+            <form action="https://echo.htmlacademy.ru" method="post">
+              <ul>
+                <li>
+                  <div class="custom-input custom-input--feedback" data-validate-type="text" data-limitation="name" data-required>
+                    <label><span class="custom-input__label">Имя:</span>
+                      <input type="text" id="user-name" name="feedback-user-name" placeholder="Введите ваше имя*">
+                    </label>
+                  </div>
+                </li>
+                <li>
+                  <div class="custom-input custom-input--phone custom-input--feedback" data-validate-type="phone" data-on-input-validate data-required>
+                    <label><span class="custom-input__label">Телефон:</span>
+                      <input type="tel" name="feedback-user-phone" placeholder="+7 ХХХ ХХХ ХХ ХХ*">
+                      <svg width="25" height="24" aria-hidden="true">
+                        <use xlink:href="img/sprite.svg#icon-phone"></use>
+                      </svg>
+                    </label>
+                  </div>
+                </li>
+                <li>
+                  <div class="custom-textarea custom-textarea--description" data-validate-type="text">
+                    <label>
+                      <textarea name="feedback-more-description" placeholder="Опишите все ваши пожелания к заказу"></textarea>
+                    </label>
+                  </div>
+                </li>
+              </ul>
+              <button class="btn" type="submit">Отправить</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="modal modal--preload" data-modal="send-order">
+      <div class="modal__wrapper">
+        <div class="modal__overlay" data-close-modal></div>
+        <div class="modal__content order">
+          <div class="title-h2 order__title">
+            <h2>Ваш заказ отправлен успешно</h2>
+          </div>
+          <button class="btn" type="button" data-close-modal data-focus>Ок</button>
+        </div>
+      </div>
+    </section>
+    <script src="js/vendor.min.js" defer></script>
+    <script src="js/main.min.js" defer></script>
   </body>
 </html>
