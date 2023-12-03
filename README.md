@@ -1,6 +1,6 @@
 ## Проект Мишка
-Опубликованная [версия](https://konovalov-as.github.io/htmlacademy-bear/)
-Превью [макетов] (https://github.com/konovalov-as/htmlacademy-bear/tree/main/layouts-preview)
+Опубликованная [версия](https://konovalov-as.github.io/htmlacademy-bear/) <br>
+Превью [макетов](https://github.com/konovalov-as/htmlacademy-bear/tree/main/layouts-preview)
 
 ## [Гайд по работе со сборкой](/GUIDE.md) 📕
 
