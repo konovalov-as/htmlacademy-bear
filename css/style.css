@@ -2295,7 +2295,7 @@ body {
 
 .custom-toggle--checkbox input:checked + .custom-toggle__icon::before {
   content: "";
-  background-image: url("/img/svg/tick.svg");
+  background-image: url("img/svg/tick.svg");
 }
 
 .custom-toggle--checkbox input:disabled + .custom-toggle__icon {
@@ -3139,7 +3139,7 @@ body {
 
 .intro {
   background-color: #f9f9f9;
-  background-image: url("/img/content/hero-mobile@1x.webp");
+  background-image: url("img/content/hero-mobile@1x.webp");
   background-repeat: no-repeat;
   background-position: center -17px;
   overflow: hidden;
@@ -3285,7 +3285,7 @@ body {
   display: block;
   width: 100%;
   height: 6px;
-  background-image: url("/img/svg/bg-zigzag-line.svg");
+  background-image: url("img/svg/bg-zigzag-line.svg");
   background-repeat: repeat-x;
   background-position: 7px bottom;
   background-size: contain;
@@ -3480,7 +3480,7 @@ body {
   display: block;
   width: 100%;
   height: 6px;
-  background-image: url("/img/svg/bg-zigzag-line.svg");
+  background-image: url("img/svg/bg-zigzag-line.svg");
   background-repeat: repeat-x;
   background-position: 7px bottom;
   background-size: contain;
@@ -5614,7 +5614,7 @@ body {
   }
 
   .intro {
-    background-image: url("/img/content/hero-tablet@1x.webp");
+    background-image: url("img/content/hero-tablet@1x.webp");
     background-position: center -62px;
   }
 
@@ -5631,7 +5631,7 @@ body {
     z-index: 10;
     width: 100%;
     height: 25px;
-    background-image: url("/img/svg/bg-zigzag-fill.svg");
+    background-image: url("img/svg/bg-zigzag-fill.svg");
     background-repeat: repeat-x;
     background-position: bottom center;
   }
@@ -5921,7 +5921,7 @@ body {
     width: 45.6%;
     height: 100%;
     background-color: #ededed;
-    background-image: url("/img/content/review@1x.jpg");
+    background-image: url("img/content/review@1x.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -6028,7 +6028,7 @@ body {
     content: "";
     width: 47px;
     height: 81px;
-    background-image: url("/img/svg/flag.svg");
+    background-image: url("img/svg/flag.svg");
     background-repeat: no-repeat;
     background-position: center;
   }
@@ -6085,7 +6085,7 @@ body {
     height: 24px;
     width: 100%;
     bottom: 0;
-    background-image: url("/img/svg/bg-zigzag-fill.svg");
+    background-image: url("img/svg/bg-zigzag-fill.svg");
     background-position: bottom;
     background-repeat: repeat-x;
   }
@@ -6569,12 +6569,12 @@ body {
 
 @media (min-width: 768px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 768px) and (min-resolution: 144dpi), (min-width: 768px) and (min-resolution: 1.5dppx) {
   .intro {
-    background-image: url("/img/content/hero-tablet@2x.webp");
+    background-image: url("img/content/hero-tablet@2x.webp");
     background-size: cover;
   }
 
   .reviews__bg::before {
-    background-image: url("/img/content/review@2x.jpg");
+    background-image: url("img/content/review@2x.jpg");
   }
 }
 
@@ -7397,7 +7397,7 @@ body {
 
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   .intro {
-    background-image: url("/img/content/hero-mobile@2x.webp");
+    background-image: url("img/content/hero-mobile@2x.webp");
     background-size: 575px;
   }
 }
