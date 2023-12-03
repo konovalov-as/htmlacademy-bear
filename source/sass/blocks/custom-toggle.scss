@@ -67,7 +67,7 @@
     input:checked + .custom-toggle__icon {
       &::before {
         content: "";
-        background-image: url("../../img/svg/tick.svg");
+        background-image: url("/img/svg/tick.svg");
       }
     }
 
